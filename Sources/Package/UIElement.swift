@@ -52,12 +52,16 @@ class UIWebPage {
         self.footer = footer
     }
     
-    func render()rethrows {
+    func render()throws {
         let html = parse()
         let data = html.data(using: String.Encoding.utf8)
         
         if let data = data {
-            throw createLeafFile(with: #file.components(separatedBy: ".")[1], and: data)
+            do {
+                createLeafFile(with: #file.components(separatedBy: ".")[1], and: data)
+            } catch let error {
+                throw error
+            }
         } else {
             throw RenderError.failedStringToData
         }
