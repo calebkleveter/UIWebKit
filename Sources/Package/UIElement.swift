@@ -81,7 +81,7 @@ class UIWebPage {
     private func createLeafFile(with name: String, and data: Data)throws {
         let manager = FileManager()
         if let drop = drop {
-            manager.createFile(atPath: "\(drop.viewsDir)", contents: data, attributes: nil)
+            manager.createFile(atPath: "\(drop.viewsDir)/\(name).leaf", contents: data, attributes: nil)
         } else {
             throw FileCreationError.noDroplet
         }
