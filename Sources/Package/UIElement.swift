@@ -16,7 +16,7 @@ class UIElement {
         didSet {
             var attr = ""
             for (key, value) in self.attributes {
-                attr.append("\(key)='\(value)'")
+                attr.append("\(key)='\(value)' ")
             }
             start = "<\(element.rawValue) \(attr)>"
         }
