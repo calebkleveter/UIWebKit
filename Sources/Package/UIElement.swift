@@ -58,7 +58,7 @@ class UIWebPage {
         
         if let data = data {
             do {
-                createLeafFile(with: #file.components(separatedBy: ".")[1], and: data)
+                try createLeafFile(with: #file.components(separatedBy: ".")[1], and: data)
             } catch let error {
                 throw error
             }
