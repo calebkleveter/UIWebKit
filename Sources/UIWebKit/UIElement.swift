@@ -9,7 +9,7 @@ public class UIElement {
     public init(element: Element) {
         self.element = element
         self.start = "<\(element.rawValue)>"
-        self.end = "<\\\(element.rawValue)>"
+        self.end = "</\(element.rawValue)>"
     }
     
     public var attributes: [String: String] = [:]
