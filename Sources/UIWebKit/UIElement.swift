@@ -55,16 +55,21 @@ public class UIWebPage {
         self.footer = footer
     }
     
-    public func render()throws -> String {
+    public func render()throws -> String? {
         let html = parse()
         let data = html.data(using: String.Encoding.utf8)
-        let fileName = #file.components(separatedBy: ".")[0]
+        let file = #file.components(separatedBy: "/").last
+        let fileName = file?.components(separatedBy: ".")[0]
         
         if let data = data {
-            do {
-                try createLeafFile(with: fileName, and: data)
-            } catch let error {
-                throw error
+            if let fileName = fileName {
+                do {
+                    try createLeafFile(with: fileName, and: data)
+                } catch let error {
+                    throw error
+                }
+            } else {
+                throw FileCreationError.fileNonExisting
             }
         } else {
             throw RenderError.failedStringToData

@@ -125,4 +125,5 @@ public enum RenderError: Error {
 public enum FileCreationError: Error {
     case noDroplet
     case dataCannotWrite
+    case fileNonExisting
 }
