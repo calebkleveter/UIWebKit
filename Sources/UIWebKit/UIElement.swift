@@ -1,7 +1,7 @@
 import Foundation
 import Vapor
 
-class UIElement {
+public class UIElement {
     var element: Element
     var start: String
     var end: String
@@ -40,7 +40,7 @@ class UIElement {
     }
 }
 
-class UIWebPage {
+public class UIWebPage {
     var head: UIElement
     var header: UIElement
     var section: UIElement
