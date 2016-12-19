@@ -2,22 +2,22 @@ import Foundation
 import Vapor
 
 public class UIElement {
-    var element: Element
-    var start: String
-    var end: String
+    public var element: Element
+    public var start: String
+    public var end: String
     
-    init(element: Element) {
+    public init(element: Element) {
         self.element = element
         self.start = "<\(element.rawValue)>"
         self.end = "<\\\(element.rawValue)>"
     }
     
-    var attributes: [String: String] = [:]
+    public var attributes: [String: String] = [:]
     
-    var text: String = ""
-    var children: [UIElement] = []
+    public var text: String = ""
+    public var children: [UIElement] = []
     
-    func parse() -> String {
+    public func parse() -> String {
         var html = ""
         self.appendAttributes()
         html.append(self.start)
@@ -41,21 +41,21 @@ public class UIElement {
 }
 
 public class UIWebPage {
-    var head: UIElement
-    var header: UIElement
-    var section: UIElement
-    var footer: UIElement
+    public var head: UIElement
+    public var header: UIElement
+    public var section: UIElement
+    public var footer: UIElement
     
-    var drop: Droplet?
+    public var drop: Droplet?
     
-    init(head: UIElement, header: UIElement, section: UIElement, footer: UIElement) {
+    public init(head: UIElement, header: UIElement, section: UIElement, footer: UIElement) {
         self.head = head
         self.header = header
         self.section = section
         self.footer = footer
     }
     
-    func render()throws -> String {
+    public func render()throws -> String {
         let html = parse()
         let data = html.data(using: String.Encoding.utf8)
         let fileName = #file.components(separatedBy: ".")[0]
@@ -109,7 +109,7 @@ public class UIWebPage {
         }
     }
     
-    func add(_ drop: Droplet) {
+    public func add(_ drop: Droplet) {
         self.drop = drop
     }
 }
