@@ -118,13 +118,3 @@ public class UIWebPage {
         self.drop = drop
     }
 }
-
-
-
-
-
-
-
-
-
-
