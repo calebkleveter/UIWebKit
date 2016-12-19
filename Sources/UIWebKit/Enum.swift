@@ -1,13 +1,3 @@
-//
-//  File.swift
-//  UIWebKit
-//
-//  Created by Caleb Kleveter on 12/16/16.
-//
-//
-
-import Foundation
-
 public enum Element: String {
     case a
     case abbr
@@ -116,14 +106,4 @@ public enum Element: String {
     case `var`
     case video
     case wbr
-}
-
-public enum RenderError: Error {
-    case failedStringToData
-}
-
-public enum FileCreationError: Error {
-    case noDroplet
-    case dataCannotWrite
-    case fileNonExisting
 }
