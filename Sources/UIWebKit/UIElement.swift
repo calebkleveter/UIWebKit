@@ -89,7 +89,19 @@ class UIWebPage {
     private func createLeafFile(with name: String, and data: Data)throws {
         let manager = FileManager()
         if let drop = drop {
-            manager.createFile(atPath: "\(drop.viewsDir)/\(name).leaf", contents: data, attributes: nil)
+            if manager.fileExists(atPath: "\(drop.viewsDir)/\(name).leaf") {
+                if let url = URL(string: "\(drop.viewsDir)/\(name).leaf") {
+                    do {
+                        try data.write(to: url)
+                    } catch let error {
+                        throw error
+                    }
+                } else {
+                    throw FileCreationError.dataCannotWrite
+                }
+            } else {
+                manager.createFile(atPath: "\(drop.viewsDir)/\(name).leaf", contents: data, attributes: nil)
+            }
         } else {
             throw FileCreationError.noDroplet
         }
