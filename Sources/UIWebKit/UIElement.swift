@@ -12,15 +12,7 @@ class UIElement {
         self.end = "<\\\(element.rawValue)>"
     }
     
-    var attributes: [String: String] = [:] {
-        didSet {
-            var attr = ""
-            for (key, value) in self.attributes {
-                attr.append("\(key)='\(value)' ")
-            }
-            start = "<\(element.rawValue) \(attr)>"
-        }
-    }
+    var attributes: [String: String] = [:]
     
     var text: String = ""
     var children: [UIElement] = []
@@ -36,6 +28,14 @@ class UIElement {
         }
         html.append(self.end)
         return html
+    }
+    
+    private func appendAttributes() {
+        var attr = ""
+        for (key, value) in self.attributes {
+            attr.append("\(key)='\(value)' ")
+        }
+        start = "< \(element.rawValue) \(attr)>"
     }
 }
 
