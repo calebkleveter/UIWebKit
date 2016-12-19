@@ -36,7 +36,7 @@ class UIElement {
         for (key, value) in self.attributes {
             attr.append("\(key)='\(value)' ")
         }
-        start = "< \(element.rawValue) \(attr)>"
+        start = "<\(element.rawValue) \(attr)>"
     }
 }
 
