@@ -56,7 +56,7 @@ public class UIWebPage {
     }
     
     public func render(with name: String = #file)throws -> String? {
-        let html = parse()
+        let html = renderHTML()
         let data = html.data(using: String.Encoding.utf8)
         let file = name.components(separatedBy: "/").last
         let fileName = file?.components(separatedBy: ".")[0]
@@ -78,7 +78,7 @@ public class UIWebPage {
         return fileName
     }
     
-    private func parse() -> String {
+    private func renderHTML() -> String {
         var html = ""
         html.append("<!DOCTYPE html>")
         html.append(head.parse())
