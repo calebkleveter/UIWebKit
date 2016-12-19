@@ -55,10 +55,10 @@ public class UIWebPage {
         self.footer = footer
     }
     
-    public func render()throws -> String? {
+    public func render(with name: String = #file)throws -> String? {
         let html = parse()
         let data = html.data(using: String.Encoding.utf8)
-        let file = #file.components(separatedBy: "/").last
+        let file = name.components(separatedBy: "/").last
         let fileName = file?.components(separatedBy: ".")[0]
         
         if let data = data {
