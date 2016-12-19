@@ -41,13 +41,15 @@ class UIElement {
 }
 
 class UIWebPage {
+    var head: UIElement
     var header: UIElement
     var section: UIElement
     var footer: UIElement
     
     var drop: Droplet?
     
-    init(header: UIElement, section: UIElement, footer: UIElement) {
+    init(head: UIElement, header: UIElement, section: UIElement, footer: UIElement) {
+        self.head = head
         self.header = header
         self.section = section
         self.footer = footer
@@ -74,7 +76,7 @@ class UIWebPage {
     private func parse() -> String {
         var html = ""
         html.append("<!DOCTYPE html>")
-        html.append("<head></head>")
+        html.append(head.parse())
         html.append("<body>")
 
         html.append(header.parse())
