@@ -19,6 +19,7 @@ class UIElement {
     
     func parse() -> String {
         var html = ""
+        self.appendAttributes()
         html.append(self.start)
         html.append(text)
         if !children.isEmpty {
