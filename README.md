@@ -42,9 +42,7 @@ Use the class to create the page:
 drop.get("about") { req in
     let about = AboutView()
     if let page = about.render(with: drop) {
-        return try drop.view.make(page, [
-            "message": drop.localization[req.lang, "welcome", "title"]
-        ])
+        return try drop.view.make(page, [])
     } else {
         throw Abort.custom(status: .internalServerError, message: "Unable to Create Page.")
     }
