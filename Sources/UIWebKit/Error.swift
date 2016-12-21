@@ -20,7 +20,10 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+/// Errors that occure when trying to render the HTML.
 public enum RenderError: Error {
+    
+    /// Turning the HTML in string form to data failed.
     case failedStringToData
 }
 
