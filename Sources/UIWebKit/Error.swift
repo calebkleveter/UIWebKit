@@ -24,8 +24,15 @@ public enum RenderError: Error {
     case failedStringToData
 }
 
+/// Errors that are thrown when trying to create a .leaf file from a UIWebPage.
 public enum FileCreationError: Error {
+    
+    /// There is no droplet availible to the UIWebPage, so there is no way to know where the Views folder is.
     case noDroplet
+    
+    /// The data failed to write to the .leaf file. This can only happen after the file exists.
     case dataCannotWrite
+    
+    /// An error occured while getting the name of the current swift file for creating the .leaf file.
     case fileNonExisting
 }
