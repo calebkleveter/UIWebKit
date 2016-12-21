@@ -23,22 +23,41 @@
 import Foundation
 import Vapor
 
+/// A UIElement works as the wrapper for an HTML element.
 public class UIElement {
+    
+    /// The element that is returned when the UIElement is parsed.
     public var element: Element
+    
+    /// The opening tag of the element.
     public var start: String
+    
+    /// The closing tag of the element.
     public var end: String
     
+    /// Create an instance of UIElement that is the element passed in.
+    ///
+    /// - parameter element: The element that is created by `.parse()`.
+    ///
+    /// - returns: An instance of UIElement with it's properties initilized with the element passed in.
     public init(element: Element) {
         self.element = element
         self.start = "<\(element.rawValue)>"
         self.end = "</\(element.rawValue)>"
     }
     
+    /// The attributes that are added to the element on parsing.
     public var attributes: [String: String] = [:]
     
+    /// The elements text.
     public var text: String = ""
+    
+    /// The elements children.
     public var children: [UIElement] = []
     
+    /// Creates HTML from the current element and all it's children
+    ///
+    /// - returns: The HTML from the current elements and it's children.
     public func parse() -> String {
         var html = ""
         self.appendAttributes()
@@ -53,6 +72,7 @@ public class UIElement {
         return html
     }
     
+    /// Adds the elements attributes to it's opening tag.
     private func appendAttributes() {
         var attr = ""
         for (key, value) in self.attributes {
