@@ -82,14 +82,34 @@ public class UIElement {
     }
 }
 
+/// Represents a web page and contains all the HTML elements.
 public class UIWebPage {
+    
+    /// The head in a web page.
     public var head: UIElement
+    
+    /// The header of the page.
     public var header: UIElement
+    
+    /// The section between the header and the footer of the page.
     public var section: UIElement
+    
+    /// The footer of the page.
     public var footer: UIElement
     
+    
+    /// The droplet that is used for putting the .leaf file that is rendered in the proper location.
     public var drop: Droplet?
     
+    
+    /// Creates a web page with a head, header, section and footer.
+    ///
+    /// - parameter head: The head of the page.
+    /// - parameter header: The header of the page.
+    /// - parameter section: The section element that goes between the header and footer
+    /// - parameter footer: The footer of the page.
+    ///
+    /// - returns: A UIWebPage with all the neccasary elements.
     public init(head: UIElement, header: UIElement, section: UIElement, footer: UIElement) {
         self.head = head
         self.header = header
@@ -97,6 +117,12 @@ public class UIWebPage {
         self.footer = footer
     }
     
+    
+    /// Renders the pages elements into HTML, creates a .leaf file and puts the HTML in the file.
+    ///
+    /// - parameter name: The name of the file that will be created. It defaults to the name of the .swift file this method is called in.
+    ///
+    /// - returns: The name of the file that is creted, i.e. "about".
     public func render(with name: String = #file)throws -> String? {
         let html = renderHTML()
         let data = html.data(using: String.Encoding.utf8)
@@ -120,6 +146,7 @@ public class UIWebPage {
         return fileName
     }
     
+    /// Takes the elements and renders them.
     private func renderHTML() -> String {
         var html = ""
         html.append("<!DOCTYPE html>")
@@ -135,6 +162,7 @@ public class UIWebPage {
         return html
     }
     
+    /// Creates the .leaf file and adds the HTML to it.
     private func createLeafFile(with name: String, and data: Data)throws {
         let manager = FileManager()
         if let drop = drop {
@@ -156,6 +184,9 @@ public class UIWebPage {
         }
     }
     
+    /// Adds a droplet to the web page for creating the file in the correct directory.
+    ///
+    /// - parameter drop: The droplet that is added to the UIWebPage.
     public func add(_ drop: Droplet) {
         self.drop = drop
     }
