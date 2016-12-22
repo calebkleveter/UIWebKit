@@ -99,7 +99,7 @@ public class UIWebPage {
     
     
     /// The droplet that is used for putting the .leaf file that is rendered in the proper location.
-    public var drop: Droplet?
+    private var drop: Droplet?
     
     
     /// Creates a web page with a head, header, section and footer.
@@ -122,7 +122,7 @@ public class UIWebPage {
     ///
     /// - parameter name: The name of the file that will be created. It defaults to the name of the .swift file this method is called in.
     ///
-    /// - returns: The name of the file that is creted, i.e. "about".
+    /// - returns: The name of the file that is created, i.e. "about".
     public func render(with name: String = #file)throws -> String? {
         let html = renderHTML()
         let data = html.data(using: String.Encoding.utf8)
