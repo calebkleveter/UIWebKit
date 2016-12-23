@@ -28,3 +28,12 @@ func AssertThrows<T, U>(_ function: (T)throws -> U) {
         XCTAssertEqual(1, 1)
     }
 }
+
+func AssertNotThrows<T, U>(_ function: (T)throws -> U) {
+    do {
+        try function
+        XCTAssertEqual(1, 1)
+    } catch {
+        XCTFail()
+    }
+}
