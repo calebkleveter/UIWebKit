@@ -19,3 +19,12 @@ class UIWebPageTests: XCTestCase {
         XCTAssert(page.footer == footer)
     }
 }
+
+func AssertThrows<T, U>(_ function: (T)throws -> U) {
+    do {
+        try function
+        XCTFail()
+    } catch {
+        XCTAssertEqual(1, 1)
+    }
+}
