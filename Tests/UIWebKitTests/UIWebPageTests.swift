@@ -1,4 +1,5 @@
 import XCTest
+import Vapor
 @testable import UIWebKit
 
 class UIWebPageTests: XCTestCase {
