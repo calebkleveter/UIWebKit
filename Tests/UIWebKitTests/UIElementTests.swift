@@ -6,6 +6,11 @@ class UIElementTests: XCTestCase {
     
     func testElementStart() {
         let element = UIElement(element: .p)
-        XCTAssert(element.start == "<p>")E
+        XCTAssert(element.start == "<p>")
+    }
+    
+    func testElementEnd() {
+        let element = UIElement(element: .a)
+        XCTAssert(element.end == "</a>")
     }
 }
