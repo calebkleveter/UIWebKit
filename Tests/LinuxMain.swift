@@ -3,6 +3,8 @@
     import XCTest
     @testable import UIWebKit
     
-    XCTMain([])
+    XCTMain([
+        testCase(UIElementTests.allTests)
+    ])
     
 #endif
