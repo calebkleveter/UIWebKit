@@ -98,7 +98,7 @@ public class UIWebPage {
     public var footer: UIElement
     
     
-    /// The droplet that is used for putting the .leaf file that is rendered in the proper location.
+    /// The droplet that is used for putting the .html file that is rendered in the proper location.
     private var drop: Droplet?
     
     
@@ -118,7 +118,7 @@ public class UIWebPage {
     }
     
     
-    /// Renders the pages elements into HTML, creates a .leaf file and puts the HTML in the file.
+    /// Renders the pages elements into HTML, creates a .html file and puts the HTML in the file.
     ///
     /// - parameter name: The name of the file that will be created. It defaults to the name of the .swift file this method is called in.
     ///
@@ -143,7 +143,10 @@ public class UIWebPage {
             throw RenderError.failedStringToData
         }
         
-        return fileName
+        guard let name = fileName else {
+            return nil
+        }
+        return name + ".html"
     }
     
     /// Takes the elements and renders them.
@@ -162,12 +165,12 @@ public class UIWebPage {
         return html
     }
     
-    /// Creates the .leaf file and adds the HTML to it.
+    /// Creates the .html file and adds the HTML to it.
     private func createLeafFile(with name: String, and data: Data)throws {
         let manager = FileManager()
         if let drop = drop {
-            if manager.fileExists(atPath: "\(drop.viewsDir)/\(name).leaf") {
-                if let url = URL(string: "\(drop.viewsDir)/\(name).leaf") {
+            if manager.fileExists(atPath: "\(drop.viewsDir)/\(name).html") {
+                if let url = URL(string: "\(drop.viewsDir)/\(name).html") {
                     do {
                         try data.write(to: url)
                     } catch let error {
@@ -177,7 +180,7 @@ public class UIWebPage {
                     throw FileCreationError.dataCannotWrite
                 }
             } else {
-                manager.createFile(atPath: "\(drop.viewsDir)/\(name).leaf", contents: data, attributes: nil)
+                manager.createFile(atPath: "\(drop.viewsDir)/\(name).html", contents: data, attributes: nil)
             }
         } else {
             throw FileCreationError.noDroplet
