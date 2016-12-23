@@ -4,7 +4,8 @@ import Vapor
 
 class UIWebPageTests: XCTestCase {
     static let allTests = [
-        ("Tests Page Elements", testElements)
+        ("Tests Page Elements", testElements),
+        ("Test Page Render", testRender)
     ]
     
     func testElements() {
@@ -18,6 +19,24 @@ class UIWebPageTests: XCTestCase {
         XCTAssert(page.header == header)
         XCTAssert(page.section == section)
         XCTAssert(page.footer == footer)
+    }
+    
+    
+    func testRender() {
+        let head = UIElement(element: .head)
+        let header = UIElement(element: .header)
+        let section = UIElement(element: .section)
+        let footer = UIElement(element: .footer)
+        let page = UIWebPage(head: head, header: header, section: section, footer: footer)
+        
+        AssertThrows(page.render)
+        
+        let drop = Droplet()
+        page.add(drop)
+        
+        AssertNotThrows(page.render)
+        XCTAssert(page.render != nil)
+        XCTAssert(page.render! == "UIWebPageTests.html")
     }
 }
 
