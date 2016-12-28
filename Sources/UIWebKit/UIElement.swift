@@ -146,6 +146,15 @@ public class UIElement {
         }
     }
     
+    /// Adds a child element to an element _if_ it is not an empty element.
+    ///
+    /// - parameter child: The element to add to the element.
+    func add(_ child: UIElement) {
+        if !isSingleTag {
+            self.children.append(child)
+        }
+    }
+    
     /// Creates HTML from the current element and all it's children
     ///
     /// - returns: The HTML from the current elements and it's children.
