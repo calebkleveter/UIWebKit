@@ -137,6 +137,15 @@ public class UIElement {
     /// The elements children.
     public private(set)var children: [UIElement] = []
     
+    /// Adds text to an element _if_ it is not an empty element.
+    ///
+    /// - parameter text: The text to add to the element.
+    func add(_ text: String) {
+        if !isSingleTag {
+            self.text = text
+        }
+    }
+    
     /// Creates HTML from the current element and all it's children
     ///
     /// - returns: The HTML from the current elements and it's children.
