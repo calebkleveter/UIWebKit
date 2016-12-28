@@ -132,10 +132,10 @@ public class UIElement {
     public var attributes: [String: String] = [:]
     
     /// The elements text.
-    public var text: String = ""
+    public private(set)var text: String = ""
     
     /// The elements children.
-    public var children: [UIElement] = []
+    public private(set)var children: [UIElement] = []
     
     /// Creates HTML from the current element and all it's children
     ///
