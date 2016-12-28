@@ -44,9 +44,14 @@ public class UIElement {
     ///
     /// - returns: An instance of UIElement with it's properties initilized with the element passed in.
     public init(element: Element) {
-        self.element = element
-        self.start = "<\(element.rawValue)>"
-        self.end = "</\(element.rawValue)>"
+        
+        switch element {
+        default:
+            self.element = element
+            self.start = "<\(element.rawValue)>"
+            self.end = "</\(element.rawValue)>"
+            self.isSingleTag = false
+        }
     }
     
     /// The attributes that are added to the element on parsing.
