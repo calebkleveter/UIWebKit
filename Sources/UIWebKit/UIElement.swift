@@ -26,6 +26,9 @@ import Vapor
 /// A UIElement works as the wrapper for an HTML element.
 public class UIElement {
     
+    /// Denotes whether the element is a single tag element or not.
+    private var isSingleTag: Bool
+    
     /// The element that is returned when the UIElement is parsed.
     public var element: Element
     
