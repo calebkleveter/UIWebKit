@@ -191,6 +191,15 @@ public enum Element: String {
     /// For creating a label element.
     case label
     
+    /// For creating a legend element.
+    case legend
+    
+    /// For creating an li element.
+    case li
+    
+    /// For creating a link element.
+    case link
+    
     /// For creating a main element.
     case main
     
