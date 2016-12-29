@@ -5,5 +5,5 @@ language: generic
 sudo: required
 dist: trusty
 osx_image: xcode8.2
-script:
-    - eval "$(curl -sL https://swift.vapor.sh/ci)"
+install:
+    - eval "$(curl -sL https://gist.githubusercontent.com/calebkleveter/db4ef3b6746381e85f9b58e3b9adc6a2/raw/87980619cce44df7684d45fa1cd8b405697e1651/travis-build.sh)"
