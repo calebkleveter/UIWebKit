@@ -20,7 +20,9 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-public enum DependancyType {}
+public enum DependancyType {
+    case javaScript
+}
 
 enum Dependancy {
     case jQuery
