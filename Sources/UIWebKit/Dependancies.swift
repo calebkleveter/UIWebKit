@@ -22,6 +22,7 @@
 
 public enum DependancyType {
     case javaScript
+    case css
 }
 
 enum Dependancy {
