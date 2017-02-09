@@ -28,4 +28,11 @@ public enum DependancyType {
 enum Dependancy {
     case jQuery
     case bootstrap
+    
+    var type: DependancyType {
+        switch self {
+        case .jQuery: return javaScript
+        case .bootstrap: return css
+        }
+    }
 }
