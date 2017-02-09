@@ -22,4 +22,5 @@
 
 enum Dependancy {
     case jQuery
+    case bootstrap
 }
