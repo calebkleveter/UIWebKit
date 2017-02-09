@@ -38,6 +38,7 @@ public class UIWebPage {
     /// The footer of the page.
     public var footer: UIElement
     
+    /// Dependancies that will be loaded into the webpage such as Bootstrap or JQuery.
     private(set) var dependancies: [Dependancy] = []
     
     /// The droplet that is used for putting the .html file that is rendered in the proper location.
