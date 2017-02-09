@@ -38,6 +38,8 @@ public class UIWebPage {
     /// The footer of the page.
     public var footer: UIElement
     
+    private(set) var dependancies: [Dependancy] = []
+    
     /// The droplet that is used for putting the .html file that is rendered in the proper location.
     private var drop: Droplet?
     
