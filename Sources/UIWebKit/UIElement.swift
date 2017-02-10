@@ -155,6 +155,15 @@ public class UIElement {
         }
     }
     
+    /// Adds a String to the rawElements array _if_ it is not a single tag element.
+    ///
+    /// - Parameter element: The element that will be added as a child of the current element.
+    public func inject(_ element: String) {
+        if !isSingleTag {
+            self.rawElements.append(element)
+        }
+    }
+    
     /// Creates HTML from the current element and all it's children
     ///
     /// - returns: The HTML from the current elements and it's children.
