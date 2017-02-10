@@ -61,7 +61,7 @@ public class UIWebPage {
     }
     
     /// Takes the elements and renders them.
-    private func renderHTML() -> String {
+    private func render()throws -> View {
         var html = ""
         html.append("<!DOCTYPE html>")
         for dependancy in dependancies {
@@ -85,7 +85,7 @@ public class UIWebPage {
         }
         html.append("</body>")
         
-        return html
+        return try View(bytes: html.bytes)
     }
     
     /// Adds a droplet to the web page for creating the file in the correct directory.
