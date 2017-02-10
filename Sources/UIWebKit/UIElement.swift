@@ -134,6 +134,9 @@ public class UIElement {
     /// The elements children.
     public private(set)var children: [UIElement] = []
     
+    /// Child elements that are added in String format.
+    public private(set)var rawElements: [String] = []
+    
     /// Adds text to an element _if_ it is not an empty element.
     ///
     /// - parameter text: The text to add to the element.
