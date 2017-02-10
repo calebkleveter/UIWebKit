@@ -136,4 +136,8 @@ public class UIWebPage {
     public func add(_ drop: Droplet) {
         self.drop = drop
     }
+    
+    func `import`(_ dependancy: Dependancy) {
+        self.dependancies.append(dependancy)
+    }
 }
