@@ -41,9 +41,6 @@ public class UIWebPage {
     /// Dependancies that will be loaded into the webpage such as Bootstrap or JQuery.
     private(set) var dependancies: [Dependancy] = []
     
-    /// The droplet that is used for putting the .html file that is rendered in the proper location.
-    private var drop: Droplet?
-    
     
     /// Creates a web page with a head, header, section and footer.
     ///
