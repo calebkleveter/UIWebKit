@@ -88,28 +88,6 @@ public class UIWebPage {
         return html
     }
     
-    /// Creates the .html file and adds the HTML to it.
-    private func createLeafFile(with name: String, and data: Data)throws {
-        let manager = FileManager()
-        if let drop = drop {
-            if manager.fileExists(atPath: "\(drop.viewsDir)\(name).html") {
-                if let url = URL(string: "file:\(drop.viewsDir)\(name).html") {
-                    do {
-                        try data.write(to: url)
-                    } catch let error {
-                        throw error
-                    }
-                } else {
-                    throw FileCreationError.dataCannotWrite
-                }
-            } else {
-                manager.createFile(atPath: "\(drop.viewsDir)/\(name).html", contents: data, attributes: nil)
-            }
-        } else {
-            throw FileCreationError.noDroplet
-        }
-    }
-    
     /// Adds a droplet to the web page for creating the file in the correct directory.
     ///
     /// - parameter drop: The droplet that is added to the UIWebPage.
