@@ -125,7 +125,7 @@ public class UIWebPage {
         let manager = FileManager()
         if let drop = drop {
             if manager.fileExists(atPath: "\(drop.viewsDir)\(name).html") {
-                if let url = URL(string: "\(drop.viewsDir)\(name).html") {
+                if let url = URL(string: "file:\(drop.viewsDir)\(name).html") {
                     do {
                         try data.write(to: url)
                     } catch let error {
