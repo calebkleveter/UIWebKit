@@ -140,7 +140,7 @@ public class UIElement {
     /// Adds text to an element _if_ it is not an empty element.
     ///
     /// - parameter text: The text to add to the element.
-    func add(_ text: String) {
+    public func add(_ text: String) {
         if !isSingleTag {
             self.text = text
         }
@@ -149,7 +149,7 @@ public class UIElement {
     /// Adds a child element to an element _if_ it is not an empty element.
     ///
     /// - parameter child: The element to add to the element.
-    func add(_ child: UIElement) {
+    public func add(_ child: UIElement) {
         if !isSingleTag {
             self.children.append(child)
         }
