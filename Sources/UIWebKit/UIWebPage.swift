@@ -124,8 +124,8 @@ public class UIWebPage {
     private func createLeafFile(with name: String, and data: Data)throws {
         let manager = FileManager()
         if let drop = drop {
-            if manager.fileExists(atPath: "\(drop.viewsDir)/\(name).html") {
-                if let url = URL(string: "\(drop.viewsDir)/\(name).html") {
+            if manager.fileExists(atPath: "\(drop.viewsDir)\(name).html") {
+                if let url = URL(string: "\(drop.viewsDir)\(name).html") {
                     do {
                         try data.write(to: url)
                     } catch let error {
