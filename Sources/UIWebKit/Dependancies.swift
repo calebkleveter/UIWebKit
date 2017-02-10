@@ -27,11 +27,12 @@ typealias Dependency = Dependancy
 typealias DependencyType = DependancyType
 
 /// Although dependencies use more CSS or JavaScript, this enum is used more for adding the CSS of the dependeny to the head of the page and the below the footer of the page.
-///
-/// - javaScript: Defines the CDN links of the dependency as linking to JavaScript.
-/// - css: Defines the CDN links of the dependency as linking to CSS.
 public enum DependancyType {
+    
+    /// Defines the CDN links of the dependency as linking to JavaScript.
     case javaScript
+    
+    /// Defines the CDN links of the dependency as linking to CSS.
     case css
 }
 
