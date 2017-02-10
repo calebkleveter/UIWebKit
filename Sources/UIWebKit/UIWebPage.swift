@@ -152,7 +152,7 @@ public class UIWebPage {
     /// Adds dependancies that will be loaded into the webpage.
     ///
     /// - Parameter dependancy: The dependancy that will added to the webpage.
-    func `import`(_ dependancy: Dependancy) {
+    public func `import`(_ dependancy: Dependancy) {
         self.dependancies.append(dependancy)
     }
 }
