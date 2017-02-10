@@ -88,13 +88,6 @@ public class UIWebPage {
         return try View(bytes: html.bytes)
     }
     
-    /// Adds a droplet to the web page for creating the file in the correct directory.
-    ///
-    /// - parameter drop: The droplet that is added to the UIWebPage.
-    public func add(_ drop: Droplet) {
-        self.drop = drop
-    }
-    
     /// Adds dependancies that will be loaded into the webpage.
     ///
     /// - Parameter dependancy: The dependancy that will added to the webpage.
