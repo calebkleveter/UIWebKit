@@ -20,6 +20,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+/// Defines Dependancy as Dependency. This is to fix the typo in the type names without breaking the API.
+typealias Dependency = Dependancy
+
+/// Defines DependencyType as DependencyType. This is to fix the typo in the type names without breaking the API.
+typealias DependencyType = DependancyType
+
 /// Although dependencies use more CSS or JavaScript, this enum is used more for adding the CSS of the dependeny to the head of the page and the below the footer of the page.
 ///
 /// - javaScript: Defines the CDN links of the dependency as linking to JavaScript.
