@@ -60,38 +60,6 @@ public class UIWebPage {
         self.footer = footer
     }
     
-    
-    /// Renders the pages elements into HTML, creates a .html file and puts the HTML in the file.
-    ///
-    /// - parameter name: The name of the file that will be created. It defaults to the name of the .swift file this method is called in.
-    ///
-    /// - returns: The name of the file that is created, i.e. "about".
-    public func render(with name: String = #file)throws -> String? {
-        let html = renderHTML()
-        let data = html.data(using: String.Encoding.utf8)
-        let file = name.components(separatedBy: "/").last
-        let fileName = file?.components(separatedBy: ".")[0]
-        
-        if let data = data {
-            if let fileName = fileName {
-                do {
-                    try createLeafFile(with: fileName, and: data)
-                } catch let error {
-                    throw error
-                }
-            } else {
-                throw FileCreationError.fileNonExisting
-            }
-        } else {
-            throw RenderError.failedStringToData
-        }
-        
-        guard let name = fileName else {
-            return nil
-        }
-        return name + ".html"
-    }
-    
     /// Takes the elements and renders them.
     private func renderHTML() -> String {
         var html = ""
