@@ -38,6 +38,8 @@ public class UIWebPage {
     /// The footer of the page.
     public var footer: UIElement
     
+    /// Dependancies that will be loaded into the webpage such as Bootstrap or JQuery.
+    private(set) var dependancies: [Dependancy] = []
     
     /// The droplet that is used for putting the .html file that is rendered in the proper location.
     private var drop: Droplet?
@@ -94,13 +96,25 @@ public class UIWebPage {
     private func renderHTML() -> String {
         var html = ""
         html.append("<!DOCTYPE html>")
+        for dependancy in dependancies {
+            if let cssTags = dependancy.htmlTags[.css] {
+                for tag in cssTags {
+                    head.inject(tag)
+                }
+            }
+        }
         html.append(head.parse())
         html.append("<body>")
-        
         html.append(header.parse())
         html.append(section.parse())
         html.append(footer.parse())
-        
+        for dependancy in dependancies {
+            if let jsTags = dependancy.htmlTags[.javaScript] {
+                for tag in jsTags {
+                    html.append(tag)
+                }
+            }
+        }
         html.append("</body>")
         
         return html
@@ -133,5 +147,12 @@ public class UIWebPage {
     /// - parameter drop: The droplet that is added to the UIWebPage.
     public func add(_ drop: Droplet) {
         self.drop = drop
+    }
+    
+    /// Adds dependancies that will be loaded into the webpage.
+    ///
+    /// - Parameter dependancy: The dependancy that will added to the webpage.
+    func `import`(_ dependancy: Dependancy) {
+        self.dependancies.append(dependancy)
     }
 }

@@ -134,6 +134,9 @@ public class UIElement {
     /// The elements children.
     public private(set)var children: [UIElement] = []
     
+    /// Child elements that are added in String format. Note that these elements are added as children _first_.
+    public private(set)var rawElements: [String] = []
+    
     /// Adds text to an element _if_ it is not an empty element.
     ///
     /// - parameter text: The text to add to the element.
@@ -152,6 +155,15 @@ public class UIElement {
         }
     }
     
+    /// Adds a String to the rawElements array _if_ it is not a single tag element.
+    ///
+    /// - Parameter element: The element that will be added as a child of the current element.
+    public func inject(_ element: String) {
+        if !isSingleTag {
+            self.rawElements.append(element)
+        }
+    }
+    
     /// Creates HTML from the current element and all it's children
     ///
     /// - returns: The HTML from the current elements and it's children.
@@ -160,6 +172,11 @@ public class UIElement {
         self.appendAttributes()
         html.append(self.start)
         html.append(text)
+        if !rawElements.isEmpty {
+            for element in rawElements {
+                html.append(element)
+            }
+        }
         if !children.isEmpty {
             for element in children {
                 html.append(element.parse())
