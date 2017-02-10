@@ -96,13 +96,25 @@ public class UIWebPage {
     private func renderHTML() -> String {
         var html = ""
         html.append("<!DOCTYPE html>")
+        for dependancy in dependancies {
+            if let cssTags = dependancy.htmlTags[.css] {
+                for tag in cssTags {
+                    head.inject(tag)
+                }
+            }
+        }
         html.append(head.parse())
-        html.append("<body>")
-        
+        html.append("<body>")r
         html.append(header.parse())
         html.append(section.parse())
         html.append(footer.parse())
-        
+        for dependancy in dependancies {
+            if let jsTags = dependancy.htmlTags[.javaScript] {
+                for tag in jsTags {
+                    html.append(tag)
+                }
+            }
+        }
         html.append("</body>")
         
         return html
