@@ -104,7 +104,7 @@ public class UIWebPage {
             }
         }
         html.append(head.parse())
-        html.append("<body>")r
+        html.append("<body>")
         html.append(header.parse())
         html.append(section.parse())
         html.append(footer.parse())
