@@ -1,5 +1,7 @@
 # UIWebKit
 
+[![Build Status](https://travis-ci.org/calebkleveter/UIWebKit.svg?branch=master)](https://travis-ci.org/calebkleveter/UIWebKit)
+
 Create UI's for Vapor without HTML.
 
 ## Example:
