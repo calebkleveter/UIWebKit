@@ -11,11 +11,12 @@ import Foundation
 import UIWebKit
 import Vapor
 
-final class MainView {
-    let head = UIElement(element: Element.head)
-    let header = UIElement(element: Element.header)
-    let section = UIElement(element: Element.section)
-    let footer = UIElement(element: Element.footer)
+final class MainView: UIWebPage {
+
+    override func configure() {
+        addSectionText()
+        addHead()
+    }
 
     func addSectionText() {
         let content = UIElement(element: Element.p)
@@ -35,19 +36,6 @@ final class MainView {
         head.add(title)
         head.add(link)
     }
-
-    func render(with drop: Droplet) -> String? {
-        self.addHead()
-        self.addSectionText()
-        let page = UIWebPage(head: head, header: header, section: section, footer: footer)
-        page.add(drop)
-        do {
-            return try page.render()
-        } catch let error {
-            print("Web Page Error: ", error)
-        }
-        return nil
-    }
 }
 ```
 
@@ -55,13 +43,7 @@ Use the class to create the page:
 
 ```swift
 drop.get("about") { req in
-    let about = AboutView()
-    if let page = about.render(with: drop) {
-        return try drop.view.make(page)
-    } else {
-        throw Abort.custom(status: .internalServerError, message: "Unable to Create Page.")
-    }
-
+    return try MainView().render()
 }
 ```
 ## Documentation:
