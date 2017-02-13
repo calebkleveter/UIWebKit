@@ -39,14 +39,6 @@ public enum Dependency {
     /// This case is used for loading Twitter Bootstrap into a UIWebPage.
     case bootstrap
     
-    /// Gets the type of the dependency. This is based off what the dependency uses _mostly_. For example, Twitter Bootstrap is marked as CSS, but it also uses JS.
-    public var type: DependencyType {
-        switch self {
-        case .jQuery: return .javaScript
-        case .bootstrap: return .css
-        }
-    }
-    
     /// Returns a a dictionary with the key as the type of CDN links that are used in the value and the value as an array of Strings that are the CDN links to the dependency.
     public var htmlTags: [DependencyType: [String]] {
         switch self {
