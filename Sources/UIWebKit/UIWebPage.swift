@@ -54,7 +54,7 @@ open class UIWebPage {
     }
     
     /// For custom configuration of the web page when it is initialized. Over ride this method to do anything during initialization.
-    public func configure() {}
+    open func configure() {}
     
     /// Renders the current page to a View with bytes that can be returned from a droplet route.
     ///
