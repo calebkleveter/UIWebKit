@@ -60,7 +60,7 @@ open class UIWebPage {
     ///
     /// - Returns: A view that contains the pages HTML in bytes.
     /// - Throws: Any errors that get thrown when crreating the view.
-    private func render()throws -> View {
+    public func render()throws -> View {
         var html = ""
         html.append("<!DOCTYPE html>")
         for dependency in dependancies {
