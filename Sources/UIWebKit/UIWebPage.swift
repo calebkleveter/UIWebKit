@@ -57,7 +57,10 @@ public class UIWebPage {
         self.footer = footer
     }
     
-    /// Takes the elements and renders them.
+    /// Renders the current page to a View with bytes that can be returned from a droplet route.
+    ///
+    /// - Returns: A view that contains the pages HTML in bytes.
+    /// - Throws: Any errors that get thrown when crreating the view.
     private func render()throws -> View {
         var html = ""
         html.append("<!DOCTYPE html>")
