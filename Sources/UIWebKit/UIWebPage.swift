@@ -44,17 +44,12 @@ public class UIWebPage {
     
     /// Creates a web page with a head, header, section and footer.
     ///
-    /// - parameter head: The head of the page.
-    /// - parameter header: The header of the page.
-    /// - parameter section: The section element that goes between the header and footer
-    /// - parameter footer: The footer of the page.
-    ///
     /// - returns: A UIWebPage with all the neccasary elements.
-    public init(head: UIElement, header: UIElement, section: UIElement, footer: UIElement) {
-        self.head = head
-        self.header = header
-        self.section = section
-        self.footer = footer
+    public init() {
+        self.head = UIElement(element: .head)
+        self.header = UIElement(element: .header)
+        self.section = UIElement(element: .section)
+        self.footer = UIElement(element: .footer)
         self.configure()
     }
     
