@@ -1,53 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Enums  Reference</title>
-    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
-    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <title>Dependency Enum Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
-    <script src="js/jquery.min.js" defer></script>
-    <script src="js/jazzy.js" defer></script>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
     
   </head>
   <body>
-    <a title="Enums  Reference"></a>
+    <a name="//apple_ref/swift/Enum/Dependency" class="dashAnchor"></a>
+    <a title="Dependency Enum Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html"> Docs</a> (100% documented)</p>
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
       <p id="breadcrumbs">
-        <a href="index.html"> Reference</a>
-        <img id="carat" src="img/carat.png" />
-        Enums  Reference
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Dependency Enum Reference
       </p>
     </div>
     <div class="content-wrapper">
       <nav class="sidebar">
         <ul class="nav-groups">
           <li class="nav-group-name">
-            <a href="Classes.html">Classes</a>
+            <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes/UIElement.html">UIElement</a>
+                <a href="../Classes/UIElement.html">UIElement</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/UIWebPage.html">UIWebPage</a>
+                <a href="../Classes/UIWebPage.html">UIWebPage</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Enums.html">Enums</a>
+            <a href="../Enums.html">Enums</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Enums/Dependency.html">Dependency</a>
+                <a href="../Enums/Dependency.html">Dependency</a>
               </li>
               <li class="nav-group-task">
-                <a href="Enums/DependencyType.html">DependencyType</a>
+                <a href="../Enums/DependencyType.html">DependencyType</a>
               </li>
               <li class="nav-group-task">
-                <a href="Enums/Element.html">Element</a>
+                <a href="../Enums/Element.html">Element</a>
               </li>
             </ul>
           </li>
@@ -56,8 +57,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Enums</h1>
-            <p>The following enums are available globally.</p>
+            <h1>Dependency</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Dependency</span></code></pre>
+
+                </div>
+              </div>
+            <p>A dependency that a UIWebPage loads in.</p>
 
           </section>
           <section class="section task-group-section">
@@ -66,9 +73,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:O8UIWebKit14DependencyType"></a>
-                    <a name="//apple_ref/swift/Enum/DependencyType" class="dashAnchor"></a>
-                    <a class="token" href="#/s:O8UIWebKit14DependencyType">DependencyType</a>
+                    <a name="/s:FO8UIWebKit10Dependency6jQueryFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/jQuery" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO8UIWebKit10Dependency6jQueryFMS0_S0_">jQuery</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -76,43 +83,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Although dependencies use more CSS or JavaScript, this enum is used more for adding the CSS of the dependeny to the head of the page and the below the footer of the page.</p>
+                        <p>This case is for loading jQuery into a UIWebPage.</p>
 
-                        <a href="Enums/DependencyType.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">DependencyType</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:O8UIWebKit10Dependency"></a>
-                    <a name="//apple_ref/swift/Enum/Dependency" class="dashAnchor"></a>
-                    <a class="token" href="#/s:O8UIWebKit10Dependency">Dependency</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A dependency that a UIWebPage loads in.</p>
-
-                        <a href="Enums/Dependency.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Dependency</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">jQuery</span></code></pre>
 
                         </div>
                       </div>
@@ -126,9 +104,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:O8UIWebKit7Element"></a>
-                    <a name="//apple_ref/swift/Enum/Element" class="dashAnchor"></a>
-                    <a class="token" href="#/s:O8UIWebKit7Element">Element</a>
+                    <a name="/s:FO8UIWebKit10Dependency9bootstrapFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/bootstrap" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO8UIWebKit10Dependency9bootstrapFMS0_S0_">bootstrap</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -136,15 +114,45 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>All the HTML elements that can be created.</p>
+                        <p>This case is used for loading Twitter Bootstrap into a UIWebPage.</p>
 
-                        <a href="Enums/Element.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Element</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">bootstrap</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vO8UIWebKit10Dependency8htmlTagsGVs10DictionaryOS_14DependencyTypeGSaSS__"></a>
+                    <a name="//apple_ref/swift/Property/htmlTags" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vO8UIWebKit10Dependency8htmlTagsGVs10DictionaryOS_14DependencyTypeGSaSS__">htmlTags</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a a dictionary with the key as the type of CDN links that are used in the value and the value as an array of Strings that are the CDN links to the dependency.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">htmlTags</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/DependencyType.html">DependencyType</a></span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]]</span></code></pre>
 
                         </div>
                       </div>

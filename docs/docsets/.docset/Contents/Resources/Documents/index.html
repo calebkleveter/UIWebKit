@@ -41,30 +41,13 @@
             <a href="Enums.html">Enums</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Enums/Dependancy.html">Dependancy</a>
+                <a href="Enums/Dependency.html">Dependency</a>
               </li>
               <li class="nav-group-task">
-                <a href="Enums/DependancyType.html">DependancyType</a>
+                <a href="Enums/DependencyType.html">DependencyType</a>
               </li>
               <li class="nav-group-task">
                 <a href="Enums/Element.html">Element</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Enums/FileCreationError.html">FileCreationError</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Enums/RenderError.html">RenderError</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Typealiases.html">Typealiases</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Typealiases.html#/s:8UIWebKit10Dependency">Dependency</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Typealiases.html#/s:8UIWebKit14DependencyType">DependencyType</a>
               </li>
             </ul>
           </li>
@@ -84,11 +67,12 @@
 <span class="kd">import</span> <span class="kt">UIWebKit</span>
 <span class="kd">import</span> <span class="kt">Vapor</span>
 
-<span class="kd">final</span> <span class="kd">class</span> <span class="kt">MainView</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">head</span> <span class="o">=</span> <span class="kt">UIElement</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="kt">Element</span><span class="o">.</span><span class="n">head</span><span class="p">)</span>
-    <span class="k">let</span> <span class="nv">header</span> <span class="o">=</span> <span class="kt">UIElement</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="kt">Element</span><span class="o">.</span><span class="n">header</span><span class="p">)</span>
-    <span class="k">let</span> <span class="nv">section</span> <span class="o">=</span> <span class="kt">UIElement</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="kt">Element</span><span class="o">.</span><span class="n">section</span><span class="p">)</span>
-    <span class="k">let</span> <span class="nv">footer</span> <span class="o">=</span> <span class="kt">UIElement</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="kt">Element</span><span class="o">.</span><span class="n">footer</span><span class="p">)</span>
+<span class="kd">final</span> <span class="kd">class</span> <span class="kt">MainView</span><span class="p">:</span> <span class="kt">UIWebPage</span> <span class="p">{</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">configure</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nf">addSectionText</span><span class="p">()</span>
+        <span class="nf">addHead</span><span class="p">()</span>
+    <span class="p">}</span>
 
     <span class="kd">func</span> <span class="nf">addSectionText</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">let</span> <span class="nv">content</span> <span class="o">=</span> <span class="kt">UIElement</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="kt">Element</span><span class="o">.</span><span class="n">p</span><span class="p">)</span>
@@ -108,38 +92,22 @@
         <span class="n">head</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
         <span class="n">head</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
     <span class="p">}</span>
-
-    <span class="kd">func</span> <span class="nf">render</span><span class="p">(</span><span class="n">with</span> <span class="nv">drop</span><span class="p">:</span> <span class="kt">Droplet</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span>
-        <span class="k">self</span><span class="o">.</span><span class="nf">addHead</span><span class="p">()</span>
-        <span class="k">self</span><span class="o">.</span><span class="nf">addSectionText</span><span class="p">()</span>
-        <span class="k">let</span> <span class="nv">page</span> <span class="o">=</span> <span class="kt">UIWebPage</span><span class="p">(</span><span class="nv">head</span><span class="p">:</span> <span class="n">head</span><span class="p">,</span> <span class="nv">header</span><span class="p">:</span> <span class="n">header</span><span class="p">,</span> <span class="nv">section</span><span class="p">:</span> <span class="n">section</span><span class="p">,</span> <span class="nv">footer</span><span class="p">:</span> <span class="n">footer</span><span class="p">)</span>
-        <span class="n">page</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="n">drop</span><span class="p">)</span>
-        <span class="k">do</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="k">try</span> <span class="n">page</span><span class="o">.</span><span class="nf">render</span><span class="p">()</span>
-        <span class="p">}</span> <span class="k">catch</span> <span class="k">let</span> <span class="nv">error</span> <span class="p">{</span>
-            <span class="nf">print</span><span class="p">(</span><span class="s">"Web Page Error: "</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="kc">nil</span>
-    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
 
 <p>Use the class to create the page:</p>
 <pre class="highlight swift"><code><span class="n">drop</span><span class="o">.</span><span class="nf">get</span><span class="p">(</span><span class="s">"about"</span><span class="p">)</span> <span class="p">{</span> <span class="n">req</span> <span class="k">in</span>
-    <span class="k">let</span> <span class="nv">about</span> <span class="o">=</span> <span class="kt">AboutView</span><span class="p">()</span>
-    <span class="k">if</span> <span class="k">let</span> <span class="nv">page</span> <span class="o">=</span> <span class="n">about</span><span class="o">.</span><span class="nf">render</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">drop</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">try</span> <span class="n">drop</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="nf">make</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">throw</span> <span class="kt">Abort</span><span class="o">.</span><span class="nf">custom</span><span class="p">(</span><span class="nv">status</span><span class="p">:</span> <span class="o">.</span><span class="n">internalServerError</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"Unable to Create Page."</span><span class="p">)</span>
-    <span class="p">}</span>
-
+    <span class="k">return</span> <span class="k">try</span> <span class="kt">MainView</span><span class="p">()</span><span class="o">.</span><span class="nf">render</span><span class="p">()</span>
 <span class="p">}</span>
 </code></pre>
+<a href='#documentation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='documentation'>Documentation:</h2>
+
+<p>You can get the API documentation <a href="https://calebkleveter.github.io/UIWebKit-Docs/">here</a>.</p>
 
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2017-02-10)</p>
+          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2017-02-13)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
