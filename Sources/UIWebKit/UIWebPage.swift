@@ -24,7 +24,7 @@ import Foundation
 import Vapor
 
 /// Represents a web page and contains all the HTML elements.
-public class UIWebPage {
+open class UIWebPage {
     
     /// The head in a web page.
     public var head: UIElement
