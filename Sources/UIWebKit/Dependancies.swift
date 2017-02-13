@@ -20,14 +20,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-/// Defines Dependancy as Dependency. This is to fix the typo in the type names without breaking the API.
-typealias Dependency = Dependancy
-
-/// Defines DependencyType as DependencyType. This is to fix the typo in the type names without breaking the API.
-typealias DependencyType = DependancyType
-
 /// Although dependencies use more CSS or JavaScript, this enum is used more for adding the CSS of the dependeny to the head of the page and the below the footer of the page.
-public enum DependancyType {
+public enum DependencyType {
     
     /// Defines the CDN links of the dependency as linking to JavaScript.
     case javaScript
@@ -37,7 +31,7 @@ public enum DependancyType {
 }
 
 /// A dependency that a UIWebPage loads in.
-public enum Dependancy {
+public enum Dependency {
     
     /// This case is for loading jQuery into a UIWebPage.
     case jQuery
@@ -46,7 +40,7 @@ public enum Dependancy {
     case bootstrap
     
     /// Gets the type of the dependency. This is based off what the dependency uses _mostly_. For example, Twitter Bootstrap is marked as CSS, but it also uses JS.
-    public var type: DependancyType {
+    public var type: DependencyType {
         switch self {
         case .jQuery: return .javaScript
         case .bootstrap: return .css
@@ -54,7 +48,7 @@ public enum Dependancy {
     }
     
     /// Returns a a dictionary with the key as the type of CDN links that are used in the value and the value as an array of Strings that are the CDN links to the dependency.
-    public var htmlTags: [DependancyType: [String]] {
+    public var htmlTags: [DependencyType: [String]] {
         switch self {
         case .bootstrap: return [.css: ["<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">", "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css\" integrity=\"sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp\" crossorigin=\"anonymous\">"], .javaScript: ["<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\" integrity=\"sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa\" crossorigin=\"anonymous\"></script>"]]
         case .jQuery: return [.javaScript: ["<script src=\"https://code.jquery.com/jquery-3.1.1.min.js\" integrity=\"sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=\"crossorigin=\"anonymous\"></script>"]]

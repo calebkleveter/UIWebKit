@@ -39,7 +39,7 @@ public class UIWebPage {
     public var footer: UIElement
     
     /// Dependancies that will be loaded into the webpage such as Bootstrap or JQuery.
-    private(set) var dependancies: [Dependancy] = []
+    private(set) var dependancies: [Dependency] = []
     
     
     /// Creates a web page with a head, header, section and footer.
@@ -61,8 +61,8 @@ public class UIWebPage {
     private func render()throws -> View {
         var html = ""
         html.append("<!DOCTYPE html>")
-        for dependancy in dependancies {
-            if let cssTags = dependancy.htmlTags[.css] {
+        for dependency in dependancies {
+            if let cssTags = dependency.htmlTags[.css] {
                 for tag in cssTags {
                     head.inject(tag)
                 }
@@ -73,8 +73,8 @@ public class UIWebPage {
         html.append(header.parse())
         html.append(section.parse())
         html.append(footer.parse())
-        for dependancy in dependancies {
-            if let jsTags = dependancy.htmlTags[.javaScript] {
+        for dependency in dependancies {
+            if let jsTags = dependency.htmlTags[.javaScript] {
                 for tag in jsTags {
                     html.append(tag)
                 }
@@ -88,7 +88,7 @@ public class UIWebPage {
     /// Adds dependancies that will be loaded into the webpage.
     ///
     /// - Parameter dependancy: The dependancy that will added to the webpage.
-    public func `import`(_ dependancy: Dependancy) {
-        self.dependancies.append(dependancy)
+    public func `import`(_ dependency: Dependency) {
+        self.dependancies.append(dependency)
     }
 }
