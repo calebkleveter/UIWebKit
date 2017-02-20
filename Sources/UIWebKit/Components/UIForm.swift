@@ -60,4 +60,16 @@ open class UIForm {
             self.form.add(formItemDiv)
         }
     }
+    
+    public class func loginForm(with login: LoginFormType) -> UIForm {
+        var formItems: [String] = []
+        
+        switch login {
+        case .email: formItems.append("Email")
+        case .username: formItems.append("Username")
+        }
+        formItems.append("Password")
+        
+        return UIForm(with: formItems, idPrefix: "user")
+    }
 }
