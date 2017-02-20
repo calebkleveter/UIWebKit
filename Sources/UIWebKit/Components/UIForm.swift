@@ -20,14 +20,28 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+/// Designates the login that is used for creating the login form.
 public enum LoginFormType {
+    
+    /// Sets the form as taking an email for the users login.
     case email
+    
+    /// Sets the form as taking a username for the login
     case username
 }
 
+/// A wrapper class for an HTML form.
 open class UIForm {
+    
+    /// The HTML form that is the base of the class
     public let form = UIElement(element: .form)
     
+    /// Creates a form with a label and input for each item.
+    ///
+    /// - Parameters:
+    ///   - items: The items that will be used for each label/input combonation for the form.
+    ///   - idPrefix: The prefix for the id's for the wrappr divs, inputs and labels. This defaults for `nil`.
+    ///   - submitText: The text for the submission button.
     public init(with items: [String], idPrefix: String? = nil, submitText: String) {
         for item in items {
             let casedName = String(item.characters.first ?? Character("")).uppercased() + String(item.characters.dropFirst()).lowercased()
@@ -67,6 +81,10 @@ open class UIForm {
         }
     }
     
+    /// Creates a form for loging in a user.
+    ///
+    /// - Parameter login: The login that will be used to authenticate the user. This could be an email or username.
+    /// - Returns: A `UIForm` for authenticating a user.
     public class func loginForm(with login: LoginFormType) -> UIForm {
         var formItems: [String] = []
         
