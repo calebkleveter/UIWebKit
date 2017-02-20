@@ -20,6 +20,9 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+/// Defines a object as capable of being rendered as HTML.
 public protocol ElementPresentable {
+    
+    /// The top level element of the object.
     var topElement: UIElement { get }
 }
