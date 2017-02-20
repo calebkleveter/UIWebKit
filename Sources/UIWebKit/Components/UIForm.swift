@@ -22,6 +22,7 @@
 
 public enum LoginFormType {
     case password
+    case username
 }
 
 open class UIForm {
