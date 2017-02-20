@@ -28,7 +28,7 @@ public enum LoginFormType {
 open class UIForm {
     public let form = UIElement(element: .form)
     
-    public init(with items: [String], idPrefix: String? = nil) {
+    public init(with items: [String], idPrefix: String? = nil, submitText: String) {
         for item in items {
             let casedName = String(item.characters.first ?? Character("")).uppercased() + String(item.characters.dropFirst()).lowercased()
             let lowerCasedName = item.lowercased()
@@ -54,8 +54,14 @@ open class UIForm {
                 formItemInput.attributes["type"] = "text"
             }
             
+            let formSubmitButton = UIElement(element: .button)
+            formSubmitButton.attributes["type"] = "submit"
+            formSubmitButton.attributes["id"] = submitText.lowercased()
+            formSubmitButton.add(submitText)
+            
             formItemDiv.add(formItemLabel)
             formItemDiv.add(formItemInput)
+            formItemDiv.add(formSubmitButton)
             
             self.form.add(formItemDiv)
         }
@@ -70,6 +76,6 @@ open class UIForm {
         }
         formItems.append("Password")
         
-        return UIForm(with: formItems, idPrefix: "user")
+        return UIForm(with: formItems, idPrefix: "user", submitText: "Login")
     }
 }
