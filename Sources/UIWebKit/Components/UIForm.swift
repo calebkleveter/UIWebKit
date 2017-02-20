@@ -29,7 +29,6 @@ open class UIForm {
     public let form = UIElement(element: .form)
     
     init(with items: [String], idPrefix: String? = nil) {
-        let newForm = UIForm()
         for item in items {
             let casedName = String(item.characters.first ?? Character("")).uppercased() + String(item.characters.dropFirst()).lowercased()
             let lowerCasedName = item.lowercased()
@@ -58,8 +57,9 @@ open class UIForm {
             formItemDiv.add(formItemLabel)
             formItemDiv.add(formItemInput)
             
-            newForm.form.add(formItemDiv)
+            self.form.add(formItemDiv)
         }
-        return newForm
     }
+    
+    
 }
