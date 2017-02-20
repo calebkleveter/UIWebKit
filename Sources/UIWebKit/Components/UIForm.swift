@@ -28,7 +28,7 @@ public enum LoginFormType {
 open class UIForm {
     public let form = UIElement(element: .form)
     
-    init(with items: [String], idPrefix: String? = nil) {
+    public init(with items: [String], idPrefix: String? = nil) {
         for item in items {
             let casedName = String(item.characters.first ?? Character("")).uppercased() + String(item.characters.dropFirst()).lowercased()
             let lowerCasedName = item.lowercased()
@@ -60,6 +60,4 @@ open class UIForm {
             self.form.add(formItemDiv)
         }
     }
-    
-    
 }
