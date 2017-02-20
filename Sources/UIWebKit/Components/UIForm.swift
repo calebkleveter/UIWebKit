@@ -27,4 +27,39 @@ public enum LoginFormType {
 
 open class UIForm {
     public let form = UIElement(element: .form)
+    
+    public class func form(with items: [String], idPrefix: String? = nil) -> UIForm {
+        let newForm = UIForm()
+        for item in items {
+            let casedName = String(item.characters.first ?? Character("")).uppercased() + String(item.characters.dropFirst()).lowercased()
+            let lowerCasedName = item.lowercased()
+            
+            let formItemDiv = UIElement(element: .div)
+            formItemDiv.attributes["id"] = idPrefix == nil ? lowerCasedName : idPrefix! + "-" + lowerCasedName
+            
+            let formItemLabel = UIElement(element: .label)
+            formItemLabel.attributes["for"] = lowerCasedName
+            formItemLabel.attributes["id"] = idPrefix == nil ? lowerCasedName + "-label" : idPrefix! + "-" + lowerCasedName + "-label"
+            formItemLabel.add(casedName)
+            
+            let formItemInput = UIElement(element: .input)
+            formItemInput.attributes["name"] = lowerCasedName
+            formItemInput.attributes["id"] = idPrefix == nil ? lowerCasedName + "-input" : idPrefix! + "-" + lowerCasedName + "-input"
+            formItemInput.attributes["placeholder"] = casedName
+            
+            if lowerCasedName == "email" || lowerCasedName == "e-mail" {
+                formItemInput.attributes["type"] = "email"
+            } else if lowerCasedName == "password" {
+                formItemInput.attributes["type"] = "password"
+            } else {
+                formItemInput.attributes["type"] = "text"
+            }
+            
+            formItemDiv.add(formItemLabel)
+            formItemDiv.add(formItemInput)
+            
+            newForm.form.add(formItemDiv)
+        }
+        return newForm
+    }
 }
