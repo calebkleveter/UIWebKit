@@ -55,3 +55,7 @@ You can get the API documentation [here](https://calebkleveter.github.io/UIWebKi
 ## Contributing:
 
 Read the contribution guidlines [here](https://github.com/calebkleveter/UIWebKit/blob/master/CONTRIBUTING.md).
+
+## License:
+
+All code is under the [MIT license](https://github.com/calebkleveter/UIWebKit/blob/master/LICENSE) agreement.
