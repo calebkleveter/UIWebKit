@@ -31,7 +31,7 @@ public enum LoginFormType {
 }
 
 /// A wrapper class for an HTML form.
-open class UIForm {
+open class UIForm: ElementPresentable {
     
     /// The HTML form that is the base of the class
     public let form = UIElement(element: .form)
@@ -102,5 +102,9 @@ open class UIForm {
     /// - Returns: The `UIForm` that contains the HTML form that will be submited on submission.
     public class func signUpForm() -> UIForm {
         return UIForm(with: ["Email", "Username", "Password"], idPrefix: "user", submitText: "Sign Up")
+    }
+    
+    public var topElement: UIElement {
+        return form
     }
 }
