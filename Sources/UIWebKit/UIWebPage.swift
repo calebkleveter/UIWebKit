@@ -50,10 +50,9 @@ open class UIWebPage {
         self.header = UIElement(element: .header)
         self.section = UIElement(element: .section)
         self.footer = UIElement(element: .footer)
-        self.configure()
     }
     
-    /// For custom configuration of the web page when it is initialized. Over ride this method to do anything during initialization.
+    /// For custom configuration of the web page before it is rendered. Over-ride this method to do anything before page rendering.
     open func configure() {}
     
     /// Renders the current page to a View with bytes that can be returned from a droplet route.
@@ -61,6 +60,7 @@ open class UIWebPage {
     /// - Returns: A view that contains the pages HTML in bytes.
     /// - Throws: Any errors that get thrown when creating the view.
     public func render()throws -> View {
+        self.configure()
         var html = ""
         html.append("<!DOCTYPE html>")
         for dependency in dependancies {
