@@ -21,7 +21,7 @@
 //  SOFTWARE.
 
 public enum LoginFormType {
-    
+    case password
 }
 
 open class UIForm {
