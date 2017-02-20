@@ -2,7 +2,7 @@
 
 If you want to contribute to this project, that's great!
 
-Start by opening an isses. Name it something like 'Proposal: <IDEA>', or 'Enhancement: <IDEA>'. The administrators of the project can review it. When you get the go-ahead, create the enhancement and submit a PR.
+Start by opening an isses. Name it something like 'Proposal: IDEA', or 'Enhancement: IDEA'. The administrators of the project can review it. When you get the go-ahead, create the enhancement and submit a PR.
 
 The PR will then go through review, There are a couple of things we are looking for:
 
