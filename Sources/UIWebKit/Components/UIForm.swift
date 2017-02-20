@@ -104,6 +104,7 @@ open class UIForm: ElementPresentable {
         return UIForm(with: ["Email", "Username", "Password"], idPrefix: "user", submitText: "Sign Up")
     }
     
+    /// The top level element of the class. In this case, it is the form property.
     public var topElement: UIElement {
         return form
     }
