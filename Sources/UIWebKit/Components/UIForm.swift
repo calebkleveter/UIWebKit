@@ -28,7 +28,7 @@ public enum LoginFormType {
 open class UIForm {
     public let form = UIElement(element: .form)
     
-    public class func form(with items: [String], idPrefix: String? = nil) -> UIForm {
+    init(with items: [String], idPrefix: String? = nil) {
         let newForm = UIForm()
         for item in items {
             let casedName = String(item.characters.first ?? Character("")).uppercased() + String(item.characters.dropFirst()).lowercased()
