@@ -51,3 +51,7 @@ drop.get("about") { req in
 ## Documentation:
 
 You can get the API documentation [here](https://calebkleveter.github.io/UIWebKit-Docs/).
+
+## Contributing:
+
+Read the contribution guidlines [here](https://github.com/calebkleveter/UIWebKit/blob/master/CONTRIBUTING.md).
