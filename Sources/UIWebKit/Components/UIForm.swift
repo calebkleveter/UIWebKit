@@ -96,4 +96,11 @@ open class UIForm {
         
         return UIForm(with: formItems, idPrefix: "user", submitText: "Login")
     }
+    
+    /// Creates a basic form for signing up a user.
+    ///
+    /// - Returns: The `UIForm` that contains the HTML form that will be submited on submission.
+    public class func signUpForm() -> UIForm {
+        return UIForm(with: ["Email", "Username", "Password"], idPrefix: "user", submitText: "Sign Up")
+    }
 }
