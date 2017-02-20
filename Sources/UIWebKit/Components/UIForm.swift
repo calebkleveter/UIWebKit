@@ -21,7 +21,7 @@
 //  SOFTWARE.
 
 public enum LoginFormType {
-    case password
+    case email
     case username
 }
 
