@@ -21,4 +21,8 @@
 //  SOFTWARE.
 
 /// Designates an object as capable of being rendered into HTML.
-public protocol ElementRenderable {}
+public protocol ElementRenderable {
+    
+    /// The element the is at the top level for the object. Example: If there is a form, the top level element would be the `UIElement` that is form.
+    var topLevelElement: UIElement { get }
+}
