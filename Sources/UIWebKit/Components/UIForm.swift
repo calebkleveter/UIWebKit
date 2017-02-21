@@ -112,3 +112,5 @@ extension UIForm: ElementRenderable {
         return self.form
     }
 }
+
+open class UIFormElement {}
