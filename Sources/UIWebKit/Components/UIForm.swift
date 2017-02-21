@@ -160,3 +160,11 @@ open class UIFormElement {
         elementWrapperDiv.add(input)
     }
 }
+
+extension UIFormElement: ElementRenderable {
+    
+    /// The top level element of the form element. This is the wrapper div.
+    public var topLevelElement: UIElement {
+        return self.elementWrapperDiv
+    }
+}
