@@ -122,6 +122,9 @@ open class UIFormElement {
     /// The text input for the form. The type for the input could be `email`, `password`, or `text` depending on the name of the form element.
     let input: UIElement
     
+    /// The div that acts as a wrapper for the input and the label.
+    let elementWrapperDiv: UIElement
+    
     /// Creates a `UIFormElement` that contains a label and an input.
     ///
     /// - Parameters:
@@ -130,9 +133,12 @@ open class UIFormElement {
     init(with name: String, and idPrefix: String? = nil) {
         self.label = UIElement(element: .label)
         self.input = UIElement(element: .input)
+        self.elementWrapperDiv = UIElement(element: .div)
         
         let casedName = String(name.characters.first ?? Character("")).uppercased() + String(name.characters.dropFirst()).lowercased()
         let lowerCasedName = name.lowercased()
+        
+        elementWrapperDiv.attributes["id"] = idPrefix == nil ? lowerCasedName : idPrefix! + "-" + lowerCasedName
         
         label.attributes["for"] = lowerCasedName
         label.attributes["id"] = idPrefix == nil ? lowerCasedName + "-label" : idPrefix! + "-" + lowerCasedName + "-label"
@@ -149,5 +155,8 @@ open class UIFormElement {
         } else {
             input.attributes["type"] = "text"
         }
+        
+        elementWrapperDiv.add(label)
+        elementWrapperDiv.add(input)
     }
 }
