@@ -21,7 +21,7 @@
 //  SOFTWARE.
 
 /// A UIElement works as the wrapper for an HTML element.
-public class UIElement: ElementPresentable {
+public class UIElement {
     
     /// Denotes whether the element is a single tag element or not.
     private var isSingleTag: Bool

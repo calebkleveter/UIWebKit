@@ -31,7 +31,7 @@ public enum LoginFormType {
 }
 
 /// A wrapper class for an HTML form.
-open class UIForm: ElementPresentable {
+open class UIForm {
     
     /// The HTML form that is the base of the class
     public let form = UIElement(element: .form)
