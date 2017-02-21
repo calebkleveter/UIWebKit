@@ -195,3 +195,11 @@ public class UIElement {
         start = "<\(element.rawValue) \(attr)>"
     }
 }
+
+extension UIElement: ElementRenderable {
+    
+    /// The top level element of the current element. This means `self`.
+    public var topLevelElement: UIElement {
+        return self
+    }
+}
