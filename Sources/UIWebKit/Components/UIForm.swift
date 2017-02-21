@@ -42,7 +42,8 @@ open class UIForm {
     ///   - items: The items that will be used for each label/input combonation for the form.
     ///   - idPrefix: The prefix for the id's for the wrappr divs, inputs and labels. This defaults for `nil`.
     ///   - submitText: The text for the submission button.
-    public init(with items: [String], idPrefix: String? = nil, submitText: String) {
+    ///   - action: The path that the data will be sent to at form submission.
+    public init(with items: [String], idPrefix: String? = nil, submitText: String, and action: String? = nil) {
         for item in items {
             self.form.add(UIFormElement(with: item, and: idPrefix))
         }
@@ -51,13 +52,20 @@ open class UIForm {
         formSubmitButton.attributes["id"] = submitText.lowercased()
         formSubmitButton.add(submitText)
         self.form.add(formSubmitButton)
+        
+        guard let action = action else { return }
+        
+        self.form.attributes["action"] = action
+        self.form.attributes["method"] = "POST"
     }
     
     /// Creates a form for loging in a user.
     ///
-    /// - Parameter login: The login that will be used to authenticate the user. This could be an email or username.
+    /// - Parameters:
+    ///   - login: The login that will be used to authenticate the user. This could be an email or username.
+    ///   - action: The path that the data will be sent to at form submission.
     /// - Returns: A `UIForm` for authenticating a user.
-    public class func loginForm(with login: LoginFormType) -> UIForm {
+    public class func loginForm(with login: LoginFormType, and action: String) -> UIForm {
         var formItems: [String] = []
         
         switch login {
@@ -66,7 +74,7 @@ open class UIForm {
         }
         formItems.append("Password")
         
-        return UIForm(with: formItems, idPrefix: "user", submitText: "Login")
+        return UIForm(with: formItems, idPrefix: "user", submitText: "Login", and: action)
     }
     
     /// Creates a basic form for signing up a user.
