@@ -132,7 +132,7 @@ public class UIElement {
     public private(set)var text: String = ""
     
     /// The elements children.
-    public private(set)var children: [UIElement] = []
+    public private(set)var children: [ElementRenderable] = []
     
     /// Child elements that are added in String format. Note that these elements are added as children _first_.
     public private(set)var rawElements: [String] = []
@@ -179,7 +179,7 @@ public class UIElement {
         }
         if !children.isEmpty {
             for element in children {
-                html.append(element.parse())
+                html.append(element.topLevelElement.parse())
             }
         }
         html.append(self.end)
