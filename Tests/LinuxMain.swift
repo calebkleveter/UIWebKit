@@ -1,10 +1,6 @@
-#if os(Linux)
+import XCTest
+@testable import UIWebKit
 
-    import XCTest
-    @testable import UIWebKit
-    
-    XCTMain([
-        testCase(UIElementTests.allTests)
-    ])
-    
-#endif
+XCTMain([
+    testCase(UIElementTests.allTests)
+])
