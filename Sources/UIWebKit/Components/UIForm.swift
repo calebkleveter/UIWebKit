@@ -104,3 +104,11 @@ open class UIForm {
         return UIForm(with: ["Email", "Username", "Password"], idPrefix: "user", submitText: "Sign Up")
     }
 }
+
+extension UIForm: ElementRenderable {
+    
+    /// The top level element of `UIForm`. This is the `form` property.
+    public var topLevelElement: UIElement {
+        return self.form
+    }
+}
