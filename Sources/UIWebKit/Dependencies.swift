@@ -20,7 +20,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-/// Although dependencies use more CSS or JavaScript, this enum is used more for adding the CSS of the dependeny to the head of the page and the below the footer of the page.
+/// Although dependencies use more CSS or JavaScript, this enum is used more for adding the CSS of the dependeny to the head of the page and the JavaScript below the footer of the page.
 public enum DependencyType {
     
     /// Defines the CDN links of the dependency as linking to JavaScript.
