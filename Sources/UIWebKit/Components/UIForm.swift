@@ -126,7 +126,7 @@ open class UIFormElement {
     ///
     /// - Parameters:
     ///   - name: The name of the element. This is used to set the text in the label, set the placeholder in the input, and set the type of the input.
-    ///   - idPrefix: <#idPrefix description#>
+    ///   - idPrefix: The prefix for the element id's. This defaults to nil
     init(with name: String, and idPrefix: String? = nil) {
         self.label = UIElement(element: .label)
         self.input = UIElement(element: .input)
