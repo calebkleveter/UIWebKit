@@ -113,4 +113,6 @@ extension UIForm: ElementRenderable {
     }
 }
 
-open class UIFormElement {}
+open class UIFormElement {
+    init() {}
+}
