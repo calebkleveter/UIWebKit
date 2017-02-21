@@ -114,5 +114,9 @@ extension UIForm: ElementRenderable {
 }
 
 open class UIFormElement {
-    init() {}
+    let label: UIElement
+    
+    init() {
+        self.label = UIElement(element: .label)
+    }
 }
