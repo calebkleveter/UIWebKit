@@ -79,6 +79,7 @@ open class UIForm {
     
     /// Creates a basic form for signing up a user.
     ///
+    /// - Parameter action: The path that the data will be sent to at form submission.
     /// - Returns: The `UIForm` that contains the HTML form that will be submited on submission.
     public class func signUpForm(with action: String) -> UIForm {
         return UIForm(with: ["Email", "Username", "Password"], idPrefix: "user", submitText: "Sign Up", and: action)
