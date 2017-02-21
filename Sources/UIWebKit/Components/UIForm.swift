@@ -115,8 +115,10 @@ extension UIForm: ElementRenderable {
 
 open class UIFormElement {
     let label: UIElement
+    let input: UIElement
     
     init() {
         self.label = UIElement(element: .label)
+        self.input = UIElement(element: .input)
     }
 }
