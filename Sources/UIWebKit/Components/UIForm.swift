@@ -80,8 +80,8 @@ open class UIForm {
     /// Creates a basic form for signing up a user.
     ///
     /// - Returns: The `UIForm` that contains the HTML form that will be submited on submission.
-    public class func signUpForm() -> UIForm {
-        return UIForm(with: ["Email", "Username", "Password"], idPrefix: "user", submitText: "Sign Up")
+    public class func signUpForm(with action: String) -> UIForm {
+        return UIForm(with: ["Email", "Username", "Password"], idPrefix: "user", submitText: "Sign Up", and: action)
     }
     
     /// The top level element of the class. In this case, it is the form property.
