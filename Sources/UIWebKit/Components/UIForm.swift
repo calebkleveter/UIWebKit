@@ -113,10 +113,20 @@ extension UIForm: ElementRenderable {
     }
 }
 
+/// A label and input combonation that is used in a form.
 open class UIFormElement {
+    
+    /// The label that says what the input is for.
     let label: UIElement
+    
+    /// The text input for the form. The type for the input could be `email`, `password`, or `text` depending on the name of the form element.
     let input: UIElement
     
+    /// Creates a `UIFormElement` that contains a label and an input.
+    ///
+    /// - Parameters:
+    ///   - name: The name of the element. This is used to set the text in the label, set the placeholder in the input, and set the type of the input.
+    ///   - idPrefix: <#idPrefix description#>
     init(with name: String, and idPrefix: String? = nil) {
         self.label = UIElement(element: .label)
         self.input = UIElement(element: .input)
