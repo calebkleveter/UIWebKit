@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>DependencyType Enum Reference</title>
+    <title>ElementRenderable Protocol Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/DependencyType" class="dashAnchor"></a>
-    <a title="DependencyType Enum Reference"></a>
+    <a name="//apple_ref/swift/Protocol/ElementRenderable" class="dashAnchor"></a>
+    <a title="ElementRenderable Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (100% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        DependencyType Enum Reference
+        ElementRenderable Protocol Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -74,14 +74,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>DependencyType</h1>
+            <h1>ElementRenderable</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">DependencyType</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ElementRenderable</span></code></pre>
 
                 </div>
               </div>
-            <p>Although dependencies use more CSS or JavaScript, this enum is used more for adding the CSS of the dependeny to the head of the page and the JavaScript below the footer of the page.</p>
+            <p>Designates an object as capable of being rendered into HTML.</p>
 
           </section>
           <section class="section task-group-section">
@@ -90,9 +90,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FO8UIWebKit14DependencyType10javaScriptFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/javaScript" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO8UIWebKit14DependencyType10javaScriptFMS0_S0_">javaScript</a>
+                    <a name="/s:vP8UIWebKit17ElementRenderable15topLevelElementCS_9UIElement"></a>
+                    <a name="//apple_ref/swift/Property/topLevelElement" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP8UIWebKit17ElementRenderable15topLevelElementCS_9UIElement">topLevelElement</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -100,45 +100,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Defines the CDN links of the dependency as linking to JavaScript.</p>
+                        <p>The element the is at the top level for the object. Example: If there is a form, the top level element would be the <code><a href="../Classes/UIElement.html">UIElement</a></code> that is form.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">javaScript</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FO8UIWebKit14DependencyType3cssFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/css" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO8UIWebKit14DependencyType3cssFMS0_S0_">css</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Defines the CDN links of the dependency as linking to CSS.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">css</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">topLevelElement</span><span class="p">:</span> <span class="kt"><a href="../Classes/UIElement.html">UIElement</a></span></code></pre>
 
                         </div>
                       </div>
