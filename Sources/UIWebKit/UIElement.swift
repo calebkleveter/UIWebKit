@@ -21,7 +21,7 @@
 //  SOFTWARE.
 
 /// A UIElement works as the wrapper for an HTML element.
-public class UIElement {
+public class UIElement: ElementPresentable {
     
     /// Denotes whether the element is a single tag element or not.
     private var isSingleTag: Bool
@@ -193,6 +193,11 @@ public class UIElement {
             attr.append("\(key)=\"\(value)\" ")
         }
         start = "<\(element.rawValue) \(attr)>"
+    }
+    
+    /// The top level element of the class. In this case, it is `self`.
+    public var topElement: UIElement {
+        return self
     }
 }
 
