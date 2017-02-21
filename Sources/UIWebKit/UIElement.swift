@@ -149,7 +149,7 @@ public class UIElement {
     /// Adds a child element to an element _if_ it is not an empty element.
     ///
     /// - parameter child: The element to add to the element.
-    public func add(_ child: UIElement) {
+    public func add(_ child: ElementRenderable) {
         if !isSingleTag {
             self.children.append(child)
         }
