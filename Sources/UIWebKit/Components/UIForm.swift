@@ -120,5 +120,24 @@ open class UIFormElement {
     init(with name: String, and idPrefix: String? = nil) {
         self.label = UIElement(element: .label)
         self.input = UIElement(element: .input)
+        
+        let casedName = String(name.characters.first ?? Character("")).uppercased() + String(name.characters.dropFirst()).lowercased()
+        let lowerCasedName = name.lowercased()
+        
+        label.attributes["for"] = lowerCasedName
+        label.attributes["id"] = idPrefix == nil ? lowerCasedName + "-label" : idPrefix! + "-" + lowerCasedName + "-label"
+        label.add(casedName)
+        
+        input.attributes["name"] = lowerCasedName
+        input.attributes["id"] = idPrefix == nil ? lowerCasedName + "-input" : idPrefix! + "-" + lowerCasedName + "-input"
+        input.attributes["placeholder"] = casedName
+        
+        if lowerCasedName == "email" || lowerCasedName == "e-mail" {
+            input.attributes["type"] = "email"
+        } else if lowerCasedName == "password" {
+            input.attributes["type"] = "password"
+        } else {
+            input.attributes["type"] = "text"
+        }
     }
 }
