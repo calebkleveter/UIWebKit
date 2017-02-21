@@ -44,41 +44,13 @@ open class UIForm {
     ///   - submitText: The text for the submission button.
     public init(with items: [String], idPrefix: String? = nil, submitText: String) {
         for item in items {
-            let casedName = String(item.characters.first ?? Character("")).uppercased() + String(item.characters.dropFirst()).lowercased()
-            let lowerCasedName = item.lowercased()
-            
-            let formItemDiv = UIElement(element: .div)
-            formItemDiv.attributes["id"] = idPrefix == nil ? lowerCasedName : idPrefix! + "-" + lowerCasedName
-            
-            let formItemLabel = UIElement(element: .label)
-            formItemLabel.attributes["for"] = lowerCasedName
-            formItemLabel.attributes["id"] = idPrefix == nil ? lowerCasedName + "-label" : idPrefix! + "-" + lowerCasedName + "-label"
-            formItemLabel.add(casedName)
-            
-            let formItemInput = UIElement(element: .input)
-            formItemInput.attributes["name"] = lowerCasedName
-            formItemInput.attributes["id"] = idPrefix == nil ? lowerCasedName + "-input" : idPrefix! + "-" + lowerCasedName + "-input"
-            formItemInput.attributes["placeholder"] = casedName
-            
-            if lowerCasedName == "email" || lowerCasedName == "e-mail" {
-                formItemInput.attributes["type"] = "email"
-            } else if lowerCasedName == "password" {
-                formItemInput.attributes["type"] = "password"
-            } else {
-                formItemInput.attributes["type"] = "text"
-            }
-            
-            let formSubmitButton = UIElement(element: .button)
-            formSubmitButton.attributes["type"] = "submit"
-            formSubmitButton.attributes["id"] = submitText.lowercased()
-            formSubmitButton.add(submitText)
-            
-            formItemDiv.add(formItemLabel)
-            formItemDiv.add(formItemInput)
-            formItemDiv.add(formSubmitButton)
-            
-            self.form.add(formItemDiv)
+            self.form.add(UIFormElement(with: item, and: idPrefix))
         }
+        let formSubmitButton = UIElement(element: .button)
+        formSubmitButton.attributes["type"] = "submit"
+        formSubmitButton.attributes["id"] = submitText.lowercased()
+        formSubmitButton.add(submitText)
+        self.form.add(formSubmitButton)
     }
     
     /// Creates a form for loging in a user.
