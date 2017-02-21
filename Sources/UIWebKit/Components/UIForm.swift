@@ -117,7 +117,7 @@ open class UIFormElement {
     let label: UIElement
     let input: UIElement
     
-    init() {
+    init(with name: String, and idPrefix: String? = nil) {
         self.label = UIElement(element: .label)
         self.input = UIElement(element: .input)
     }
