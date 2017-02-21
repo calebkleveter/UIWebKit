@@ -1,3 +1,5 @@
+![UIWebKit Icon](https://raw.githubusercontent.com/calebkleveter/UIWebKit/develop/icons/uiwebkit-icon.png)
+
 # UIWebKit
 
 [![Build Status](https://travis-ci.org/calebkleveter/UIWebKit.svg?branch=master)](https://travis-ci.org/calebkleveter/UIWebKit)
