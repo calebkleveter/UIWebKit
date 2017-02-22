@@ -39,7 +39,7 @@ public enum Dependency {
     /// This case is used for loading Twitter Bootstrap into a `UIWebPage`.
     case bootstrap
     
-    /// For loading UIKit (the front-end framework) into a `UIWebPage`.
+    /// For loading UIKit (the [front-end framework](https://getuikit.com/)) into a `UIWebPage`.
     case uiKit
     
     /// Returns a a dictionary with the key as the type of CDN links that are used in the value and the value as an array of Strings that are the CDN links to the dependency.
