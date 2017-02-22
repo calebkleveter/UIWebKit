@@ -164,10 +164,34 @@ public class UIElement {
         }
     }
     
-    /// Creates HTML from the current element and all it's children
+    /// Creates HTML from the current element and all it's children. This method is deprecated due to bad naming. Use the `render()` method instead.
     ///
     /// - returns: The HTML from the current elements and it's children.
+    @available(*, message: "Deprecated: Use the render method instead. This method will be removed in version 4")
     public func parse() -> String {
+        print("[UIWebKit] - The parse() method is deprecated and will be removed in version 4. Use the render() method instead.")
+        var html = ""
+        self.appendAttributes()
+        html.append(self.start)
+        html.append(text)
+        if !rawElements.isEmpty {
+            for element in rawElements {
+                html.append(element)
+            }
+        }
+        if !children.isEmpty {
+            for element in children {
+                html.append(element.topLevelElement.parse())
+            }
+        }
+        html.append(self.end)
+        return html
+    }
+    
+    /// Creates HTML from the current element and all it's children.
+    ///
+    /// - Returns: The HTML from the current elements and it's children.
+    public func render() -> String {
         var html = ""
         self.appendAttributes()
         html.append(self.start)
