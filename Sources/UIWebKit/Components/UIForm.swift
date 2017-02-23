@@ -79,10 +79,12 @@ open class UIForm {
     
     /// Creates a basic form for signing up a user.
     ///
-    /// - Parameter action: The path that the data will be sent to at form submission.
+    /// - Parameters:
+    ///   - action: The path that the data will be sent to at form submission.
+    ///   - idPrefix: The prefix for the element's ids. This defaults to "user".
     /// - Returns: The `UIForm` that contains the HTML form that will be submited on submission.
-    public class func signUpForm(with action: String) -> UIForm {
-        return UIForm(with: ["Email", "Username", "Password"], idPrefix: "user", submitText: "Sign Up", and: action)
+    public class func signUpForm(with action: String, and idPrefix: String = "user") -> UIForm {
+        return UIForm(with: ["Email", "Username", "Password"], idPrefix: idPrefix, submitText: "Sign Up", and: action)
     }
     
     /// The top level element of the class. In this case, it is the form property.
