@@ -1,0 +1,5 @@
+custom_rules:
+  no_on_class_inheritance:
+    regex: "\w*\s(struct|class)\s\w*\:\s{0,1}\w*\s{0,1}\{"
+    match_kinds: objectliteral
+    message: "Use an extension for inheritance or protocol implimentation."
