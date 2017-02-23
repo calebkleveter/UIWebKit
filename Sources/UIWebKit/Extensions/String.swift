@@ -26,7 +26,7 @@ extension String {
     ///
     /// - Returns: The encoded string.
     func safetyHTMLEncoded() -> String {
-        let htmlAsciiCodes: [String: String] = ["<": "&lt;", ">": "&gt;", "/": "&#47;", "(": "&#40;", ")": "&#41;", "{": "&#123;", "}": "&#125;"]
+        let htmlAsciiCodes: [String: String] = ["<": "&lt;", ">": "&gt;", "/": "&#47;", "(": "&#40;", ")": "&#41;", "{": "&#123;", "}": "&#125;", "\"": "&quot;"]
         var finalString = ""
         _ = self.characters.map {
             if $0.isDangerousAscii() {
