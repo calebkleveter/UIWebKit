@@ -70,11 +70,11 @@ open class UIWebPage {
                 }
             }
         }
-        html.append(head.parse())
+        html.append(head.render())
         html.append("<body>")
-        html.append(header.parse())
-        html.append(section.parse())
-        html.append(footer.parse())
+        html.append(header.render())
+        html.append(section.render())
+        html.append(footer.render())
         for dependency in dependancies {
             if let jsTags = dependency.htmlTags[.javaScript] {
                 for tag in jsTags {

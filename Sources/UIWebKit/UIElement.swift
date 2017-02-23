@@ -192,7 +192,7 @@ public class UIElement {
         }
         if !children.isEmpty {
             for element in children {
-                html.append(element.topLevelElement.parse())
+                html.append(element.topLevelElement.render())
             }
         }
         html.append(self.end)
@@ -214,7 +214,7 @@ public class UIElement {
         }
         if !children.isEmpty {
             for element in children {
-                html.append(element.topLevelElement.parse())
+                html.append(element.topLevelElement.render())
             }
         }
         html.append(self.end)
