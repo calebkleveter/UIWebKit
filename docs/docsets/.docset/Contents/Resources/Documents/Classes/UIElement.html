@@ -341,7 +341,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Adds text to an element <em>if</em> it is not an empty element.</p>
+                        <p>Adds text to an element <em>if</em> it is not an empty element. The text is safety encoded.</p>
 
                       </div>
                       <div class="declaration">
@@ -365,6 +365,53 @@
                               <td>
                                 <div>
                                   <p>The text to add to the element.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8UIWebKit9UIElement6addRawFSST_"></a>
+                    <a name="//apple_ref/swift/Method/addRaw(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8UIWebKit9UIElement6addRawFSST_">addRaw(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds text to an element <em>if</em> it is not a single tag element. Note that this text is not safety encoded.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addRaw</span><span class="p">(</span><span class="n">_</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>text</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The text that will be added to the element. If you want to know more, ask Jon Skeet 🦄.</p>
 
                                 </div>
                               </td>
@@ -482,7 +529,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Creates HTML from the current element and all it&rsquo;s children</p>
+                        <p>Creates HTML from the current element and all it&rsquo;s children. This method is deprecated due to bad naming. Use the <code><a href="../Classes/UIElement.html#/s:FC8UIWebKit9UIElement6renderFT_SS">render()</a></code> method instead.</p>
 
                       </div>
                       <div class="declaration">
@@ -504,9 +551,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8UIWebKit9UIElement10topElementS0_"></a>
-                    <a name="//apple_ref/swift/Property/topElement" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8UIWebKit9UIElement10topElementS0_">topElement</a>
+                    <a name="/s:FC8UIWebKit9UIElement6renderFT_SS"></a>
+                    <a name="//apple_ref/swift/Method/render()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8UIWebKit9UIElement6renderFT_SS">render()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -514,16 +561,21 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The top level element of the class. In this case, it is <code>self</code>.</p>
+                        <p>Creates HTML from the current element and all it&rsquo;s children.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">topElement</span><span class="p">:</span> <span class="kt">UIElement</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">render</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The HTML from the current elements and it’s children.</p>
+
                       </div>
                     </section>
                   </div>
@@ -564,7 +616,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2017-02-21)</p>
+          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2017-02-23)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
