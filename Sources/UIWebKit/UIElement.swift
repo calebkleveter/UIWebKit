@@ -139,7 +139,7 @@ public class UIElement {
     /// Child elements that are added in String format. Note that these elements are added as children _first_.
     public private(set)var rawElements: [String] = []
     
-    /// Adds text to an element _if_ it is not an empty element.  The text is safety encoded.
+    /// Adds text to an element _if_ it is not an empty element. The text is safety encoded.
     ///
     /// - parameter text: The text to add to the element.
     public func add(_ text: String) {
@@ -228,11 +228,6 @@ public class UIElement {
             attr.append("\(key)=\"\(value)\" ")
         }
         start = "<\(element.rawValue) \(attr)>"
-    }
-    
-    /// The top level element of the class. In this case, it is `self`.
-    public var topElement: UIElement {
-        return self
     }
 }
 
