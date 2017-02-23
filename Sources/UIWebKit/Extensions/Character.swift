@@ -19,3 +19,14 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
+
+extension Character {
+    
+    /// Tests a character to see if it could be involved in an HTML tag.
+    ///
+    /// - Returns: A bool denoting whether the the character is a '>', '<', '/', '(', ')', '{', or '}'.
+    func isDangerousAscii() -> Bool {
+        if self == "<" || self == ">" || self == "/" || self == "(" || self == ")" || self == "{" || self == "}" { return true }
+        return false
+    }
+}
