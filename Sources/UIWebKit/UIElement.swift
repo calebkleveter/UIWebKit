@@ -142,7 +142,7 @@ public class UIElement {
     /// - parameter text: The text to add to the element.
     public func add(_ text: String) {
         if !isSingleTag {
-            self.text = text
+            self.text = text.safetyHTMLEncoded()
         }
     }
     
