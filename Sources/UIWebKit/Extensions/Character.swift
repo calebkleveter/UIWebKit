@@ -24,9 +24,9 @@ extension Character {
     
     /// Tests a character to see if it could be involved in an HTML tag.
     ///
-    /// - Returns: A bool denoting whether the the character is a '>', '<', '/', '(', ')', '{', or '}'.
+    /// - Returns: A bool denoting whether the the character is a '>', '<', '/', '(', ')', '"', '{', or '}'.
     func isDangerousAscii() -> Bool {
-        if self == "<" || self == ">" || self == "/" || self == "(" || self == ")" || self == "{" || self == "}" { return true }
+        if self == "<" || self == ">" || self == "/" || self == "(" || self == ")" || self == "{" || self == "}" || self == "\"" { return true }
         return false
     }
 }
