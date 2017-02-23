@@ -20,6 +20,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+import Foundation
+
 /// A UIElement works as the wrapper for an HTML element.
 public class UIElement {
     
