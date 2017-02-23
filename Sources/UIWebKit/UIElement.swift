@@ -137,7 +137,7 @@ public class UIElement {
     /// Child elements that are added in String format. Note that these elements are added as children _first_.
     public private(set)var rawElements: [String] = []
     
-    /// Adds text to an element _if_ it is not an empty element. Note that this text is not safety encoded.
+    /// Adds text to an element _if_ it is not an empty element.  The text is safety encoded.
     ///
     /// - parameter text: The text to add to the element.
     public func add(_ text: String) {
@@ -146,7 +146,7 @@ public class UIElement {
         }
     }
     
-    /// Adds text to an element _if_ it is not a single tag element. The text is safety encoded.
+    /// Adds text to an element _if_ it is not a single tag element. Note that this text is not safety encoded.
     ///
     /// - Parameter text: The text that will be added to the element. If you want to know more, ask Jon Skeet 🦄.
     public func addRaw(_ text: String) {
