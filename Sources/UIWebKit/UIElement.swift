@@ -180,7 +180,7 @@ public class UIElement {
     /// - returns: The HTML from the current elements and it's children.
     @available(*, message: "Deprecated: Use the render method instead. This method will be removed in version 4")
     public func parse() -> String {
-        print("[UIWebKit] - The parse() method is deprecated and will be removed in version 4. Use the render() method instead.")
+        print("[UIWebKit: \(Date.init())] - The parse() method is deprecated and will be removed in version 4. Use the render() method instead.")
         var html = ""
         self.appendAttributes()
         html.append(self.start)
