@@ -149,11 +149,9 @@ public class UIElement {
     /// Adds text to an element _if_ it is not a single tag element. The text is safety encoded.
     ///
     /// - Parameter text: The text that will be added to the element. If you want to know more, ask Jon Skeet 🦄.
-    public func safelyAdd(_ text: String) {
+    public func addRaw(_ text: String) {
         if !isSingleTag {
-            if let encodedText = text.addingPercentEncoding(withAllowedCharacters: .urlPasswordAllowed) {
-                self.text = encodedText
-            }
+            self.text = text
         }
     }
     
