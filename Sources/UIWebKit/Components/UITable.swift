@@ -31,7 +31,7 @@ open class UITableRow {
         self.cells = []
         
         for string in data {
-            let row = UIElement(element: .tr)
+            let row = UIElement(element: .td)
             row.add(string)
             self.cells.append(row)
         }
