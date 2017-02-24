@@ -22,6 +22,7 @@
 
 open class UITable {
     let table: UIElement
+    var headerRow: UITableRowHeader?
     var rows: [UITableRow]
 }
 
