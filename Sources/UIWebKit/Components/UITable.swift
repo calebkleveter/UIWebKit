@@ -26,6 +26,11 @@ open class UITableRow {}
 
 open class UITableCellHeader {
     let cellHeader: UIElement
+    
+    init(with data: String) {
+        self.cellHeader = UIElement(element: .th)
+        self.cellHeader.add(data)
+    }
 }
 
 open class UITableCell {
