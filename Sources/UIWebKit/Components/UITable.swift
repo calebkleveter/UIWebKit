@@ -24,4 +24,6 @@ open class UITable {}
 
 open class UITableRow {}
 
-open class UITableCell {}
+open class UITableCell {
+    let cell: UIElement
+}
