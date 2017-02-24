@@ -22,9 +22,10 @@
 
 import Foundation
 import Vapor
+import HTTP
 
 /// Represents a web page and contains all the HTML elements.
-open class UIWebPage {
+open class UIWebPage: ResponseRepresentable {
     
     /// The head in a web page.
     public var head: UIElement
@@ -85,6 +86,10 @@ open class UIWebPage {
         html.append("</body>")
         
         return try View(bytes: html.bytes)
+    }
+
+    public func makeResponse() throws -> Response {
+        return try render().makeResponse()
     }
     
     /// Adds dependancies that will be loaded into the webpage.
