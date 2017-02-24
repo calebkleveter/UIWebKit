@@ -24,6 +24,16 @@ open class UITable {
     let table: UIElement
     var headerRow: UITableRowHeader?
     var rows: [UITableRow]
+    
+    init(with data: [[String]]) {
+        self.table = UIElement(element: .table)
+        self.rows = []
+        for row in data {
+            let newRow = UITableRow(with: row)
+            self.rows.append(newRow)
+            self.table.add(newRow)
+        }
+    }
 }
 
 /// A row in an HTML table.
