@@ -26,4 +26,9 @@ open class UITableRow {}
 
 open class UITableCell {
     let cell: UIElement
+    
+    init(with data: String) {
+        self.cell = UIElement(element: .td)
+        self.cell.add(data)
+    }
 }
