@@ -25,7 +25,7 @@ import Vapor
 import HTTP
 
 /// Represents a web page and contains all the HTML elements.
-open class UIWebPage: ResponseRepresentable {
+open class UIWebPage {
     
     /// The head in a web page.
     public var head: UIElement
@@ -87,15 +87,22 @@ open class UIWebPage: ResponseRepresentable {
         
         return try View(bytes: html.bytes)
     }
-
-    public func makeResponse() throws -> Response {
-        return try render().makeResponse()
-    }
     
     /// Adds dependancies that will be loaded into the webpage.
     ///
     /// - Parameter dependancy: The dependancy that will added to the webpage.
     public func `import`(_ dependency: Dependency) {
         self.dependancies.append(dependency)
+    }
+}
+
+extension UIWebPage: ResponseRepresentable {
+    
+    /// Handles auto rendering for routes.
+    ///
+    /// - Returns: A response containing the view from rendering.
+    /// - Throws: Any errors generated from creating the view.
+    public func makeResponse() throws -> Response {
+        return try render().makeResponse()
     }
 }
