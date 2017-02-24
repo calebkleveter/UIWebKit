@@ -40,6 +40,7 @@ open class UITableRow {
 
 open class UITableRowHeader {
     let rowHeader: UIElement
+    var cellHeaders: [UIElement]
 }
 
 open class UITableCellHeader {
