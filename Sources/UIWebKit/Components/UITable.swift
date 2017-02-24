@@ -38,6 +38,8 @@ open class UITableRow {
     }
 }
 
+open class UITableRowHeader {}
+
 open class UITableCellHeader {
     let cellHeader: UIElement
     
