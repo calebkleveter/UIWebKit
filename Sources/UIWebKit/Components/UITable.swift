@@ -22,10 +22,18 @@
 
 open class UITable {}
 
+/// A row in an HTML table.
 open class UITableRow {
+    
+    /// The row that contains the table cellss
     public let row: UIElement
+    
+    /// The cells that contain the data for the table.
     public var cells: [UITableCell]
     
+    /// Creates a row for an HTML table with cells containing data.`
+    ///
+    /// - Parameter data: The data that will conatined in the cells in the table row.
     public init(with data: [String]) {
         self.row = UIElement(element: .tr)
         self.cells = []
