@@ -41,7 +41,9 @@ open class UITableRow {
         self.cells = []
         
         for string in data {
-            self.cells.append(UITableCell(with: string))
+            let cell = UITableCell(with: string)
+            self.cells.append(cell)
+            self.row.add(cell)
         }
     }
 }
@@ -63,7 +65,9 @@ open class UITableRowHeader {
         self.cellHeaders = []
         
         for string in data {
-            self.cellHeaders.append(UITableCellHeader(with: string))
+            let cellHeader = UITableCellHeader(with: string)
+            self.cellHeaders.append(cellHeader)
+            rowHeader.add(cellHeader)
         }
     }
 }
