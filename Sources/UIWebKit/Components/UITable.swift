@@ -23,10 +23,10 @@
 open class UITable {}
 
 open class UITableRow {
-    let row: UIElement
-    var cells: [UIElement]
+    public let row: UIElement
+    public var cells: [UIElement]
     
-    init(with data: [String]) {
+    public init(with data: [String]) {
         self.row = UIElement(element: .tr)
         self.cells = []
         
@@ -39,10 +39,10 @@ open class UITableRow {
 }
 
 open class UITableRowHeader {
-    let rowHeader: UIElement
-    var cellHeaders: [UIElement]
+    public let rowHeader: UIElement
+    public var cellHeaders: [UIElement]
     
-    init(with data: [String]) {
+    public init(with data: [String]) {
         self.rowHeader = UIElement(element: .tr)
         self.cellHeaders = []
         
@@ -55,18 +55,18 @@ open class UITableRowHeader {
 }
 
 open class UITableCellHeader {
-    let cellHeader: UIElement
+    public let cellHeader: UIElement
     
-    init(with data: String) {
+    public init(with data: String) {
         self.cellHeader = UIElement(element: .th)
         self.cellHeader.add(data)
     }
 }
 
 open class UITableCell {
-    let cell: UIElement
+    public let cell: UIElement
     
-    init(with data: String) {
+    public init(with data: String) {
         self.cell = UIElement(element: .td)
         self.cell.add(data)
     }
