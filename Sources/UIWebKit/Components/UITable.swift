@@ -38,7 +38,9 @@ open class UITableRow {
     }
 }
 
-open class UITableRowHeader {}
+open class UITableRowHeader {
+    let rowHeader: UIElement
+}
 
 open class UITableCellHeader {
     let cellHeader: UIElement
