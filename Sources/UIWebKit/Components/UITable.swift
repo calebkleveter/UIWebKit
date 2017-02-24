@@ -41,6 +41,17 @@ open class UITableRow {
 open class UITableRowHeader {
     let rowHeader: UIElement
     var cellHeaders: [UIElement]
+    
+    init(with data: [String]) {
+        self.rowHeader = UIElement(element: .tr)
+        self.cellHeaders = []
+        
+        for string in data {
+            let row = UIElement(element: .th)
+            row.add(string)
+            self.cellHeaders.append(row)
+        }
+    }
 }
 
 open class UITableCellHeader {
