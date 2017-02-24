@@ -22,6 +22,7 @@
 
 open class UITable {
     let table: UIElement
+    var rows: [UITableRow]
 }
 
 /// A row in an HTML table.
