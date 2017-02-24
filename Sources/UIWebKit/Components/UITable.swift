@@ -34,6 +34,19 @@ open class UITable {
             self.table.add(newRow)
         }
     }
+    
+    init(with headerTitles: [String], and rowsCellData: [[String]]) {
+        self.table = UIElement(element: .table)
+        self.rows = []
+        
+        self.headerRow = UITableRowHeader(with: headerTitles)
+        self.table.add(headerRow ?? UITableRowHeader(with: []))
+        for row in rowsCellData {
+            let newRow = UITableRow(with: row)
+            self.rows.append(newRow)
+            self.table.add(newRow)
+        }
+    }
 }
 
 /// A row in an HTML table.
