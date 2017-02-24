@@ -50,9 +50,15 @@ open class UITableRowHeader {
     }
 }
 
+/// Handles the header cell of an HTML table header row.
 open class UITableCellHeader {
+    
+    /// The header cell that contains the description of the data contained in subsequent cells.
     public let cellHeader: UIElement
     
+    /// Creates a header cell for a table's header row.
+    ///
+    /// - Parameter data: The title for the data contained in the following cells.
     public init(with data: String) {
         self.cellHeader = UIElement(element: .th)
         self.cellHeader.add(data)
