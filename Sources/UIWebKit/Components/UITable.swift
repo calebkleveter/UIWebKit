@@ -22,7 +22,9 @@
 
 open class UITable {}
 
-open class UITableRow {}
+open class UITableRow {
+    let row: UIElement
+}
 
 open class UITableCellHeader {
     let cellHeader: UIElement
