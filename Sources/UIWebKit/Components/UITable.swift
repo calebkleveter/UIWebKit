@@ -24,6 +24,7 @@ open class UITable {}
 
 open class UITableRow {
     let row: UIElement
+    let cells: [UIElement]
 }
 
 open class UITableCellHeader {
