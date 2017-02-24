@@ -59,9 +59,15 @@ open class UITableCellHeader {
     }
 }
 
+/// Handles the cell of a row in an HTML table.
 open class UITableCell {
+    
+    /// The cell that contains the data for the table.
     public let cell: UIElement
     
+    /// Creats a HTML table row cell.
+    ///
+    /// - Parameter data: The data that the cell will contain.
     public init(with data: String) {
         self.cell = UIElement(element: .td)
         self.cell.add(data)
