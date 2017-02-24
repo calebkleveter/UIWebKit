@@ -317,6 +317,9 @@ public enum Element: String {
     /// For creating a table body element.
     case tbody
     
+    /// For creating a table cell element.
+    case td
+    
     /// For creating a template element.
     case template
     
