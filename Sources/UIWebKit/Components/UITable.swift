@@ -97,3 +97,11 @@ open class UITableCell {
         self.cell.add(data)
     }
 }
+
+extension UITableCell: ElementRenderable {
+    
+    /// The cell contained in the current instance of `UITableCell`.
+    public var topLevelElement: UIElement {
+        return self.cell
+    }
+}
