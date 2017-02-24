@@ -24,7 +24,18 @@ open class UITable {}
 
 open class UITableRow {
     let row: UIElement
-    let cells: [UIElement]
+    var cells: [UIElement]
+    
+    init(with data: [String]) {
+        self.row = UIElement(element: .tr)
+        self.cells = []
+        
+        for string in data {
+            let row = UIElement(element: .tr)
+            row.add(string)
+            self.cells.append(row)
+        }
+    }
 }
 
 open class UITableCellHeader {
