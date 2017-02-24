@@ -24,32 +24,28 @@ open class UITable {}
 
 open class UITableRow {
     public let row: UIElement
-    public var cells: [UIElement]
+    public var cells: [UITableCell]
     
     public init(with data: [String]) {
         self.row = UIElement(element: .tr)
         self.cells = []
         
         for string in data {
-            let row = UIElement(element: .td)
-            row.add(string)
-            self.cells.append(row)
+            self.cells.append(UITableCell(with: string))
         }
     }
 }
 
 open class UITableRowHeader {
     public let rowHeader: UIElement
-    public var cellHeaders: [UIElement]
+    public var cellHeaders: [UITableCellHeader]
     
     public init(with data: [String]) {
         self.rowHeader = UIElement(element: .tr)
         self.cellHeaders = []
         
         for string in data {
-            let row = UIElement(element: .th)
-            row.add(string)
-            self.cellHeaders.append(row)
+            self.cellHeaders.append(UITableCellHeader(with: string))
         }
     }
 }
