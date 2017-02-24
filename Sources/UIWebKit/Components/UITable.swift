@@ -36,10 +36,18 @@ open class UITableRow {
     }
 }
 
+/// A header row in an HTML table.
 open class UITableRowHeader {
+    
+    /// The row that contains the header cells.
     public let rowHeader: UIElement
+    
+    /// The header cells contained in the header row.
     public var cellHeaders: [UITableCellHeader]
     
+    /// Creates a header row with cells for an HTML table.
+    ///
+    /// - Parameter data: The titles that will be contained in the header cells.
     public init(with data: [String]) {
         self.rowHeader = UIElement(element: .tr)
         self.cellHeaders = []
