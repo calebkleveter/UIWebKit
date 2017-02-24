@@ -20,11 +20,21 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+/// Handles an HTML table element.
 open class UITable {
+    
+    /// The HTML table. I have nothing else to say.
     let table: UIElement
+    
+    /// The header row for the HTML table.
     var headerRow: UITableRowHeader?
+    
+    /// The rows of data cells for the table.
     var rows: [UITableRow]
     
+    /// Creats a table with rows of data cells and no header.
+    ///
+    /// - Parameter data: A 2D array of strings that contains the data for the cells. Each sub-array is for a row of cells.
     init(with data: [[String]]) {
         self.table = UIElement(element: .table)
         self.rows = []
@@ -35,6 +45,11 @@ open class UITable {
         }
     }
     
+    /// Creates a table with a header row and subsequent rows of data cells.
+    ///
+    /// - Parameters:
+    ///   - headerTitles: The titles that will be in the header row's cells.
+    ///   - rowsCellData: A 2D array of strings that contains the data for the data cells. Each sub-array is for a row of cells.
     init(with headerTitles: [String], and rowsCellData: [[String]]) {
         self.table = UIElement(element: .table)
         self.rows = []
@@ -52,7 +67,7 @@ open class UITable {
 /// A row in an HTML table.
 open class UITableRow {
     
-    /// The row that contains the table cellss
+    /// The row that contains the table cells.
     public let row: UIElement
     
     /// The cells that contain the data for the table.
