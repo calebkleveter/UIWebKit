@@ -98,6 +98,14 @@ open class UITableCell {
     }
 }
 
+extension UITableCellHeader: ElementRenderable {
+    
+    /// The header cell contained in the current instance of `UITableCellHeader`.
+    public var topLevelElement: UIElement {
+        return self.cellHeader
+    }
+}
+
 extension UITableCell: ElementRenderable {
     
     /// The cell contained in the current instance of `UITableCell`.
