@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>DependencyType Enum Reference</title>
+    <title>UITableRow Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/DependencyType" class="dashAnchor"></a>
-    <a title="DependencyType Enum Reference"></a>
+    <a name="//apple_ref/swift/Class/UITableRow" class="dashAnchor"></a>
+    <a title="UITableRow Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (100% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        DependencyType Enum Reference
+        UITableRow Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -89,14 +89,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>DependencyType</h1>
+            <h1>UITableRow</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">DependencyType</span></code></pre>
+                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">UITableRow</span></code></pre>
 
                 </div>
               </div>
-            <p>Although dependencies use more CSS or JavaScript, this enum is used more for adding the CSS of the dependeny to the head of the page and the JavaScript below the footer of the page.</p>
+            <p>A row in an HTML table.</p>
 
           </section>
           <section class="section task-group-section">
@@ -105,9 +105,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FO8UIWebKit14DependencyType10javaScriptFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/javaScript" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO8UIWebKit14DependencyType10javaScriptFMS0_S0_">javaScript</a>
+                    <a name="/s:vC8UIWebKit10UITableRow3rowCS_9UIElement"></a>
+                    <a name="//apple_ref/swift/Property/row" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8UIWebKit10UITableRow3rowCS_9UIElement">row</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -115,16 +115,90 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Defines the CDN links of the dependency as linking to JavaScript.</p>
+                        <p>The row that contains the table cells.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">javaScript</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">row</span><span class="p">:</span> <span class="kt"><a href="../Classes/UIElement.html">UIElement</a></span></code></pre>
 
                         </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC8UIWebKit10UITableRow5cellsGSaCS_11UITableCell_"></a>
+                    <a name="//apple_ref/swift/Property/cells" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8UIWebKit10UITableRow5cellsGSaCS_11UITableCell_">cells</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The cells that contain the data for the table.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">cells</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/UITableCell.html">UITableCell</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8UIWebKit10UITableRowcFT4withGSaSS__S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8UIWebKit10UITableRowcFT4withGSaSS__S0_">init(with:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a row for an HTML table with cells containing data.`</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">with</span> <span class="nv">data</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The data that will conatined in the cells in the table row.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -136,9 +210,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FO8UIWebKit14DependencyType3cssFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/css" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO8UIWebKit14DependencyType3cssFMS0_S0_">css</a>
+                    <a name="/s:vC8UIWebKit10UITableRow15topLevelElementCS_9UIElement"></a>
+                    <a name="//apple_ref/swift/Property/topLevelElement" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8UIWebKit10UITableRow15topLevelElementCS_9UIElement">topLevelElement</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -146,14 +220,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Defines the CDN links of the dependency as linking to CSS.</p>
+                        <p>The row contained in the current <code>UITableRow</code>.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">css</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">topLevelElement</span><span class="p">:</span> <span class="kt"><a href="../Classes/UIElement.html">UIElement</a></span></code></pre>
 
                         </div>
                       </div>

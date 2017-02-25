@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>UIFormElement Class Reference</title>
+    <title>UITableCellHeader Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/UIFormElement" class="dashAnchor"></a>
-    <a title="UIFormElement Class Reference"></a>
+    <a name="//apple_ref/swift/Class/UITableCellHeader" class="dashAnchor"></a>
+    <a title="UITableCellHeader Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (100% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        UIFormElement Class Reference
+        UITableCellHeader Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -89,14 +89,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>UIFormElement</h1>
+            <h1>UITableCellHeader</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">UIFormElement</span></code></pre>
+                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">UITableCellHeader</span></code></pre>
 
                 </div>
               </div>
-            <p>A label and input combonation that is used in a form.</p>
+            <p>Handles the header cell of an HTML table header row.</p>
 
           </section>
           <section class="section task-group-section">
@@ -105,9 +105,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8UIWebKit13UIFormElement15topLevelElementCS_9UIElement"></a>
-                    <a name="//apple_ref/swift/Property/topLevelElement" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8UIWebKit13UIFormElement15topLevelElementCS_9UIElement">topLevelElement</a>
+                    <a name="/s:vC8UIWebKit17UITableCellHeader10cellHeaderCS_9UIElement"></a>
+                    <a name="//apple_ref/swift/Property/cellHeader" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8UIWebKit17UITableCellHeader10cellHeaderCS_9UIElement">cellHeader</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -115,7 +115,85 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The top level element of the form element. This is the wrapper div.</p>
+                        <p>The header cell that contains the description of the data contained in subsequent cells.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">cellHeader</span><span class="p">:</span> <span class="kt"><a href="../Classes/UIElement.html">UIElement</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8UIWebKit17UITableCellHeadercFT4withSS_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8UIWebKit17UITableCellHeadercFT4withSS_S0_">init(with:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a header cell for a table&rsquo;s header row.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">with</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The title for the data contained in the following cells.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC8UIWebKit17UITableCellHeader15topLevelElementCS_9UIElement"></a>
+                    <a name="//apple_ref/swift/Property/topLevelElement" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8UIWebKit17UITableCellHeader15topLevelElementCS_9UIElement">topLevelElement</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The header cell contained in the current instance of <code>UITableCellHeader</code>.</p>
 
                       </div>
                       <div class="declaration">
