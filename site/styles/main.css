@@ -34,6 +34,7 @@ header div p a img {
 .feature-icon {
   height: 8em;
   float: left;
+  margin-left: 1em;
 }
 
 .feature-text {
