@@ -33,6 +33,11 @@ header div p a img {
 
 .feature-icon {
   height: 8em;
+  float: left;
+}
+
+.feature-text {
+  float: right;
 }
 
 header #logo {
