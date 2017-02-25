@@ -1,6 +1,11 @@
+nav {
+    float: right;
+}
+
 nav ul li {
     display: inline-block;
 }
+
 
 header div p a img {
     height: 10em;
