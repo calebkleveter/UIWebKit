@@ -2,6 +2,10 @@ nav ul li {
     display: inline-block;
 }
 
+header div p a img {
+    height: 10em;
+}
+
 header#logo {
     float: left;
 }
