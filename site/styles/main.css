@@ -10,6 +10,10 @@ nav ul li {
     display: inline-block;
 }
 
+nav ul li a {
+    text-decoration: none;
+}
+
 header {
     height: 11em;
     background-color: #363636;
