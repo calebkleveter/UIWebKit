@@ -25,6 +25,12 @@ header #logo {
     margin: 0 0 1em 2em;
 }
 
+#github-link {
+  float: left;
+  margin: 0 auto;
+  padding: 0 40%;
+}
+
 #github-link-image {
     height: 8em;
 }
