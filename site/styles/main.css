@@ -6,13 +6,18 @@ nav ul li {
     display: inline-block;
 }
 
+header {
+    height: 11em;
+}
 
 header div p a img {
     height: 10em;
 }
 
-header#logo {
+header #logo {
     float: left;
+    display: inline-block;
+    margin-bottom: 1em;
 }
 
 #github-link-image {
