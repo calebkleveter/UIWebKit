@@ -22,7 +22,7 @@ header div p a img {
 header #logo {
     float: left;
     display: inline-block;
-    margin-bottom: 1em;
+    margin: 0 0 1em 2em;
 }
 
 #github-link-image {
