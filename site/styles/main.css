@@ -39,6 +39,7 @@ header div p a img {
 
 .feature-text {
   float: right;
+  margin-right: 1em;
 }
 
 header #logo {
