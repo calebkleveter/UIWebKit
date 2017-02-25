@@ -142,6 +142,14 @@ open class UITableCell {
     }
 }
 
+extension UITable: ElementRenderable {
+    
+    /// The table element that is contained in the `UITable`.
+    public var topLevelElement: UIElement {
+        return self.table
+    }
+}
+
 extension UITableRow: ElementRenderable {
     
     /// The row contained in the current `UITableRow`.
