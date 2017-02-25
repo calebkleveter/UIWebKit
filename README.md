@@ -3,6 +3,7 @@
 # UIWebKit
 
 [![Build Status](https://travis-ci.org/calebkleveter/UIWebKit.svg?branch=master)](https://travis-ci.org/calebkleveter/UIWebKit)
+[![Documentation Coverage](https://raw.githubusercontent.com/calebkleveter/UIWebKit/master/docs/badge.svg)](https://calebkleveter.github.io/UIWebKit-Docs/)
 
 Create UI's for Vapor without HTML.
 
