@@ -31,6 +31,10 @@ header div p a img {
     height: 9em;
 }
 
+.feature {
+  margin-top: 3em;
+}
+
 .feature-icon {
   height: 8em;
   float: left;
@@ -40,6 +44,7 @@ header div p a img {
 .feature-text {
   float: right;
   margin-right: 1em;
+  margin-top: 4.6em;
 }
 
 header #logo {
