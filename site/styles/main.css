@@ -14,3 +14,7 @@ header div p a img {
 header#logo {
     float: left;
 }
+
+#github-link-image {
+    height: 8em;
+}
