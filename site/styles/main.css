@@ -31,6 +31,10 @@ header div p a img {
     height: 9em;
 }
 
+.feature-icon {
+  height: 8em;
+}
+
 header #logo {
     float: left;
     display: inline-block;
