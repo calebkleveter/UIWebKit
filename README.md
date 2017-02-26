@@ -48,7 +48,7 @@ Use the class to create the page:
 
 ```swift
 drop.get("about") { req in
-    return try MainView().render()
+    return MainView()
 }
 ```
 ## Documentation:
