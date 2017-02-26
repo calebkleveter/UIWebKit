@@ -24,18 +24,18 @@
 open class UITable {
     
     /// The HTML table. I have nothing else to say.
-    let table: UIElement
+    public let table: UIElement
     
     /// The header row for the HTML table.
-    var headerRow: UITableRowHeader?
+    public var headerRow: UITableRowHeader?
     
     /// The rows of data cells for the table.
-    var rows: [UITableRow]
+    public var rows: [UITableRow]
     
     /// Creats a table with rows of data cells and no header.
     ///
     /// - Parameter data: A 2D array of strings that contains the data for the cells. Each sub-array is for a row of cells.
-    init(with data: [[String]]) {
+    public init(with data: [[String]]) {
         self.table = UIElement(element: .table)
         self.rows = []
         for row in data {
