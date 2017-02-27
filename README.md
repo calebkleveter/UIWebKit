@@ -1,4 +1,4 @@
-![UIWebKit Icon](https://raw.githubusercontent.com/calebkleveter/UIWebKit/develop/icons/uiwebkit-icon-trimmed.png)
+![UIWebKit Icon](https://raw.githubusercontent.com/calebkleveter/UIWebKit/develop/icons/uiwebkit-icon-slim-sized.svg)
 
 # UIWebKit
 
