@@ -21,4 +21,6 @@
 //  SOFTWARE.
 
 /// Renders Markdown into HTML.
-struct MarkdownRenderer {}
+public struct MarkdownRenderer {
+    
+}
