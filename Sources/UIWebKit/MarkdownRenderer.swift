@@ -37,7 +37,7 @@ public struct MarkdownRenderer {
     public func replace(matchesFor regex: String, in string: String, start: String = "", end: String = "")throws -> String {
         let mutableString = NSMutableString(string: string)
         let regExpression = try NSRegularExpression(pattern: regex, options: .allowCommentsAndWhitespace)
-        regExpression.replaceMatches(in: mutableString, options: .anchored, range: NSRange(location: 0, length: mutableString.length), withTemplate: start + "$1" + end)
+        regExpression.replaceMatches(in: mutableString, options: .withoutAnchoringBounds, range: NSRange(location: 0, length: mutableString.length), withTemplate: start + "$1" + end)
         return String(mutableString)
     }
     
@@ -77,6 +77,17 @@ public struct MarkdownRenderer {
         renderedString = try self.replace(matchesFor: "\\#\\#\\#\\#([^\\#]+)\\#*", in: renderedString, start: "<h4>", end: "</h4>")
         renderedString = try self.replace(matchesFor: "\\#\\#\\#\\#\\#([^\\#]+)\\#*", in: renderedString, start: "<h5>", end: "</h5>")
         renderedString = try self.replace(matchesFor: "\\#\\#\\#\\#\\#\\#([^\\#]+)\\#*", in: renderedString, start: "<h6>", end: "</h6>")
+        return renderedString
+    }
+    
+    /// Renders a Markdown blockquote to an HTML `<blockquote>` element.
+    ///
+    /// - Parameter string: The string the HTML will be rendered from.
+    /// - Returns: The final rendered string.
+    /// - Throws: Any error thrown while creating the regex to find blockquotes.
+    public func renderBlockQuotes(from string: String)throws -> String {
+        var renderedString = string
+        renderedString = try self.replace(matchesFor: "\\>\\s?(.*)", in: renderedString, start: "<h1>", end: "</h1>")
         return renderedString
     }
 }
