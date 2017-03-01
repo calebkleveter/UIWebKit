@@ -102,6 +102,11 @@ public struct MarkdownRenderer {
     }
     
     
+    /// Renders a Markdown ordered list to an HTML ordered list.
+    ///
+    /// - Parameter string: The string that will be used for rendering.
+    /// - Returns: The final rendered string.
+    /// - Throws: Any errors thrown while creating the regex for rendering.
     public func renderOrderedLists(from string: String)throws -> String {
         var renderedString = "<ol>"
         renderedString.append(try self.replace(matchesFor: "\\d\\.\\s?(.*)", in: string, start: "<li>", end: "</li>"))
