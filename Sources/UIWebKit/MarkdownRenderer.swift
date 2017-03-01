@@ -100,4 +100,12 @@ public struct MarkdownRenderer {
         formattedMatches.append("</blockquote>")
         return formattedMatches.joined(separator: "\n")
     }
+    
+    
+    public func renderOrderedLists(from string: String)throws -> String {
+        var renderedString = "<ol>"
+        renderedString.append(try self.replace(matchesFor: "\\d\\.\\s?(.*)", in: string, start: "<li>", end: "</li>"))
+        renderedString.append("</ol>")
+        return renderedString
+    }
 }
