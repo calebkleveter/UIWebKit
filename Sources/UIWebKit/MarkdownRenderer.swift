@@ -23,6 +23,11 @@
 import Foundation
 
 /// Renders Markdown into HTML.
-public struct MarkdownRenderer {
-    
+public struct rers {
+    public func replace(matchesFor regex: String, in string: String, start: String = "", end: String = "")throws -> String {
+        let mutableString = NSMutableString(string: string)
+        let regExpression = try NSRegularExpression(pattern: regex, options: .allowCommentsAndWhitespace)
+        regExpression.replaceMatches(in: mutableString, options: .withoutAnchoringBounds, range: NSRange(location: 0, length: mutableString.length), withTemplate: start + "$1" + end)
+        return String(mutableString)
+    }
 }
