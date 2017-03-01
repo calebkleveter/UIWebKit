@@ -41,4 +41,22 @@ public struct rers {
         let renderedString = try self.replace(matchesFor: "\\_\\_([^\\_\\_]+)\\_\\_", in: string, start: "<strong>", end: "</strong>")
         return try self.replace(matchesFor: "\\*\\*([^\\*\\*]+)\\*\\*", in: renderedString, start: "<strong>", end: "</strong>")
     }
+    
+    /// Renders Markdown headers into HTML.
+    ///
+    /// - Parameter string: The string that is used for rendering.
+    /// - Returns: The rendered string.
+    /// - Throws: Any errors thrown when creating the regex for finding Markdown headers.
+    public func replaceHeaders(from string: String)throws -> String {
+        var renderedString = string
+        renderedString = try self.replace(matchesFor: "(.+)\\n\\=+", in: renderedString, start: "<h1>", end: "</h1>")
+        renderedString = try self.replace(matchesFor: "(.+)\\n\\-+", in: renderedString, start: "<h2>", end: "</h2>")
+        renderedString = try self.replace(matchesFor: "\\#([^\\#]+)\\#*", in: renderedString, start: "<h1>", end: "</h1>")
+        renderedString = try self.replace(matchesFor: "\\#\\#([^\\#]+)\\#*", in: renderedString, start: "<h2>", end: "</h2>")
+        renderedString = try self.replace(matchesFor: "\\#\\#\\#([^\\#]+)\\#*", in: renderedString, start: "<h3>", end: "</h3>")
+        renderedString = try self.replace(matchesFor: "\\#\\#\\#\\#([^\\#]+)\\#*", in: renderedString, start: "<h4>", end: "</h4>")
+        renderedString = try self.replace(matchesFor: "\\#\\#\\#\\#\\#([^\\#]+)\\#*", in: renderedString, start: "<h5>", end: "</h5>")
+        renderedString = try self.replace(matchesFor: "\\#\\#\\#\\#\\#\\#([^\\#]+)\\#*", in: renderedString, start: "<h6>", end: "</h6>")
+        return renderedString
+    }
 }
