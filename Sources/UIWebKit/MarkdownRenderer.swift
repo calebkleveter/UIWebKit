@@ -32,6 +32,8 @@ public struct rers {
     }
     
     public func replaceItalics(from string: String)throws -> String {
-        return try self.replace(matchesFor: "\\_([^\\_]+)\\_", in: string, start: "<b>", end: "</b>")
+        let renderedString = try self.replace(matchesFor: "\\_([^\\_]+)\\_", in: string, start: "<em>", end: "</em>")
+        return try self.replace(matchesFor: "\\*([^\\*]+)\\*", in: renderedString, start: "<em>", end: "</em>")
+        
     }
 }
