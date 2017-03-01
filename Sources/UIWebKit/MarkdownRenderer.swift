@@ -86,8 +86,18 @@ public struct MarkdownRenderer {
     /// - Returns: The final rendered string.
     /// - Throws: Any error thrown while creating the regex to find blockquotes.
     public func renderBlockQuotes(from string: String)throws -> String {
-        var renderedString = string
-        renderedString = try self.replace(matchesFor: "\\>\\s?(.*)", in: renderedString, start: "<h1>", end: "</h1>")
-        return renderedString
+        let regExpression = try NSRegularExpression(pattern: "\\>\\s?(.*)", options: .allowCommentsAndWhitespace)
+        let results = regExpression.matches(in: string, range: NSRange(location: 0, length: (string as NSString).length))
+        let matches = results.map({ (string as NSString).substring(with: $0.range)})
+        var formattedMatches: [String] = []
+        for match in matches {
+            var match = match
+            match.remove(at: match.startIndex)
+            if match.characters.first == Character(" ") { match.remove(at: match.startIndex) }
+            formattedMatches.append(match)
+        }
+        formattedMatches.insert("<blockquote>", at: 0)
+        formattedMatches.append("</blockquote>")
+        return formattedMatches.joined(separator: "\n")
     }
 }
