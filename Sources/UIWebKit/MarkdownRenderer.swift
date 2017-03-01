@@ -24,6 +24,16 @@ import Foundation
 
 /// Renders Markdown into HTML.
 public struct rers {
+    
+    /// Replaces the string passed in with the first instance of captured text from the string and adds leading and following text.
+    ///
+    /// - Parameters:
+    ///   - regex: The regex used for matching the text.
+    ///   - string: The string that will be matched against the regex.
+    ///   - start: The string that will be appended to the start of the resulting string after runnning it through the regex.
+    ///   - end: The string that will be appended to the end of the resulting string after running it through the regex.
+    /// - Returns: The renderd string.
+    /// - Throws: Any errors thrown from creating the regex.
     public func replace(matchesFor regex: String, in string: String, start: String = "", end: String = "")throws -> String {
         let mutableString = NSMutableString(string: string)
         let regExpression = try NSRegularExpression(pattern: regex, options: .allowCommentsAndWhitespace)
@@ -31,12 +41,22 @@ public struct rers {
         return String(mutableString)
     }
     
+    /// Renders Markdown italic syntax to HTML `<em>` tags.
+    ///
+    /// - Parameter string: The string used to render the HTML.
+    /// - Returns: The rendered string.
+    /// - Throws: Any errors thrown when creating the regex for finding Markdown italic syntax.
     public func replaceItalics(from string: String)throws -> String {
         let renderedString = try self.replace(matchesFor: "\\_([^\\_]+)\\_", in: string, start: "<em>", end: "</em>")
         return try self.replace(matchesFor: "\\*([^\\*]+)\\*", in: renderedString, start: "<em>", end: "</em>")
         
     }
     
+    /// Renders Markdown bold syntax to HTML `<strong>` tags.
+    ///
+    /// - Parameter string: The string that is used for rendering.
+    /// - Returns: The rendered string.
+    /// - Throws: Any errors thrown when creating the regex for finding Markdown bold syntax.
     public func replaceBold(from string: String)throws -> String {
         let renderedString = try self.replace(matchesFor: "\\_\\_([^\\_\\_]+)\\_\\_", in: string, start: "<strong>", end: "</strong>")
         return try self.replace(matchesFor: "\\*\\*([^\\*\\*]+)\\*\\*", in: renderedString, start: "<strong>", end: "</strong>")
