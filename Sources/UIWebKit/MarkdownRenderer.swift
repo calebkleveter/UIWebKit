@@ -23,7 +23,7 @@
 import Foundation
 
 /// Renders Markdown into HTML.
-public struct rers {
+public struct MarkdownRenderer {
     
     /// Replaces the string passed in with the first instance of captured text from the string and adds leading and following text.
     ///
