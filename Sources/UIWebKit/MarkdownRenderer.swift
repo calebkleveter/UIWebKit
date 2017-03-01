@@ -36,4 +36,9 @@ public struct rers {
         return try self.replace(matchesFor: "\\*([^\\*]+)\\*", in: renderedString, start: "<em>", end: "</em>")
         
     }
+    
+    public func replaceBold(from string: String)throws -> String {
+        let renderedString = try self.replace(matchesFor: "\\_\\_([^\\_\\_]+)\\_\\_", in: string, start: "<strong>", end: "</strong>")
+        return try self.replace(matchesFor: "\\*\\*([^\\*\\*]+)\\*\\*", in: renderedString, start: "<strong>", end: "</strong>")
+    }
 }
