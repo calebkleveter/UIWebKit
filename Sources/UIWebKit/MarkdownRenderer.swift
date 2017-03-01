@@ -30,4 +30,8 @@ public struct rers {
         regExpression.replaceMatches(in: mutableString, options: .withoutAnchoringBounds, range: NSRange(location: 0, length: mutableString.length), withTemplate: start + "$1" + end)
         return String(mutableString)
     }
+    
+    public func replaceItalics(from string: String)throws -> String {
+        return try self.replace(matchesFor: "\\_([^\\_]+)\\_", in: string, start: "<b>", end: "</b>")
+    }
 }
