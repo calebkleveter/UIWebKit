@@ -113,4 +113,16 @@ public struct MarkdownRenderer {
         renderedString.append("</ol>")
         return renderedString
     }
+    
+    /// Renders a Markdown unordered list to an HTML unordered list.
+    ///
+    /// - Parameter string: The string that will be used for rendering.
+    /// - Returns: The final rendered string.
+    /// - Throws: Any errors thrown while creating the regex for rendering.
+    public func renderUnorderedLists(from string: String)throws -> String {
+        var renderedString = "<ul>"
+        renderedString.append(try self.replace(matchesFor: "[\\*|\\+|\\-]\\.\\s?(.*)", in: string, start: "<li>", end: "</li>"))
+        renderedString.append("</ul>")
+        return renderedString
+    }
 }
