@@ -176,6 +176,18 @@ public class UIElement {
         }
     }
     
+    
+    /// Renders Markdown to HTML that gets added as child elements. This method uses `.inject(string)` for adding the elements.
+    ///
+    /// - Parameter string: The Markdown that will be rendered to HTML.
+    public func addMarkdown(_ string: String)throws {
+        if !isSingleTag {
+            let renderer = MarkdownRenderer()
+            let html = try renderer.render(string)
+            self.inject(html)
+        }
+    }
+    
     /// Creates HTML from the current element and all it's children. This method is deprecated due to bad naming. Use the `render()` method instead.
     ///
     /// - returns: The HTML from the current elements and it's children.
