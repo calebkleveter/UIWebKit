@@ -21,6 +21,7 @@
 //  SOFTWARE.
 
 import Foundation
+import SwiftDown
 
 /// A UIElement works as the wrapper for an HTML element.
 public class UIElement {
