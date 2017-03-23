@@ -51,6 +51,14 @@ open class UIOrderedList {
     }
 }
 
+extension UIOrderedList: ElementRenderable {
+    
+    /// The top level `ol` element of the object.
+    public var topLevelElement: UIElement {
+        return self.ol
+    }
+}
+
 /// A wrapper class for li (list) elements.
 open class UIListItem {
     
