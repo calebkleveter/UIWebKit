@@ -25,6 +25,9 @@ open class UIOrderedList {
     
     /// The `ol` element that is represented by this class.
     let ol = UIElement(element: .ol)
+    
+    /// The list items used in the ordered list.
+    var listItems: [UIElement] = []
     init() {}
 }
 
