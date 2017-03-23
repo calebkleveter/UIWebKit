@@ -42,6 +42,13 @@ open class UIOrderedList {
     public init(with elements: UIElement...) {
         self.listItems = elements.map { UIListItem(with: $0) }
     }
+    
+    /// Creates a `UIOrderedList` with custom `UIListItems`.
+    ///
+    /// - Parameter listElements: The `UIListItems` for the `UIOrderedList` ol.
+    public init(with listElements: UIListItem...) {
+        self.listItems = listElements
+    }
 }
 
 /// A wrapper class for li (list) elements.
