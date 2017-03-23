@@ -21,5 +21,9 @@
 //  SOFTWARE.
 
 open class UIListItem {
-    init() {}
+    let text: String
+    
+    init(text: String) {
+        self.text = text
+    }
 }
