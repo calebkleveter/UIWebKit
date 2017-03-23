@@ -35,6 +35,13 @@ open class UIOrderedList {
     public init(with text: String...) {
         self.listItems = text.map { UIListItem(text: $0) }
     }
+    
+    /// Creates a `UIOrderedList` with children in the list items.
+    ///
+    /// - Parameter elements: The elements that will be used in the `li` elements.
+    public init(with elements: UIElement...) {
+        self.listItems = elements.map { UIListItem(with: $0) }
+    }
 }
 
 /// A wrapper class for li (list) elements.
