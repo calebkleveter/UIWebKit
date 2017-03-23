@@ -20,7 +20,9 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-open class UIOrderedList {}
+open class UIOrderedList {
+    init() {}
+}
 
 /// A wrapper class for li (list) elements.
 open class UIListItem {
