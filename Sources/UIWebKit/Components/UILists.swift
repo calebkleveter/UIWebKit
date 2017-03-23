@@ -22,9 +22,9 @@
 
 open class UIListItem {
     let li = UIElement(element: .li)
-    let text: String
+    let text: String?
     
-    init(text: String) {
+    init(text: String?) {
         self.text = text
     }
 }
