@@ -21,5 +21,9 @@
 //  SOFTWARE.
 
 open class UINavigation {
-    init() {}
+    var anchorAttributes: [String: String]
+    
+    init(navItems: [String: String]) {
+        self.anchorAttributes = navItems
+    }
 }
