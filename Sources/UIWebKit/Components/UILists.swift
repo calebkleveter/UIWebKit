@@ -24,11 +24,12 @@
 open class UIOrderedList {
     
     /// The `ol` element that is represented by this class.
-    let ol = UIElement(element: .ol)
+    public let ol = UIElement(element: .ol)
     
     /// The list items used in the ordered list.
-    var listItems: [UIElement] = []
-    init() {}
+    public private(set) var listItems: [UIElement] = []
+    
+    public init() {}
 }
 
 /// A wrapper class for li (list) elements.
