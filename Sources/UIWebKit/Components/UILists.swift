@@ -51,6 +51,8 @@ open class UIListItem {
 }
 
 extension UIListItem: ElementRenderable {
+    
+    /// The `li` property of the instance of `UIListItem`.
     public var topLevelElement: UIElement {
         return self.li
     }
