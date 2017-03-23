@@ -49,3 +49,9 @@ open class UIListItem {
         for child in children { li.add(child) }
     }
 }
+
+extension UIListItem: ElementRenderable {
+    public var topLevelElement: UIElement {
+        return self.li
+    }
+}
