@@ -20,9 +20,15 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+/// A wrapper object around a navigation element with a unordered list of anchors.
 open class UINavigation {
+    
+    /// The link and text the navigations anchor elements are created from.
     var anchorAttributes: [String: String]
     
+    /// Creates a `UINavigation` with the attributs for the anchor elements.
+    ///
+    /// - Parameter navItems: The dictionary used for getting the information for the anchors. The key is used for the text and the value is used as the link.
     init(navItems: [String: String]) {
         self.anchorAttributes = navItems
     }
