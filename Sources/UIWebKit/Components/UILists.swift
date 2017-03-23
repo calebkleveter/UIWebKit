@@ -20,12 +20,23 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+/// A wrapper class for li (list) elements.
 open class UIListItem {
+    
+    /// The base list element of the class
     let li = UIElement(element: .li)
-    let text: String?
+    
+    /// The child elements of the li.
     var children: [UIElement] = []
     
-    init(text: String?) {
+    /// The text for the list element.
+    let text: String?
+    
+    /// Creates a `UIListItem` with the text passed in.
+    ///
+    /// - Parameter text: The text for instances `li` property.
+    init(text: String? = nil) {
         self.text = text
+        if let text = text { li.add(text) }
     }
 }
