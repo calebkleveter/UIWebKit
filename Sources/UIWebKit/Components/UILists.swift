@@ -23,6 +23,7 @@
 open class UIListItem {
     let li = UIElement(element: .li)
     let text: String?
+    var children: [UIElement] = []
     
     init(text: String?) {
         self.text = text
