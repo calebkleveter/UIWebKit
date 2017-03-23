@@ -29,7 +29,12 @@ open class UIOrderedList {
     /// The list items used in the ordered list.
     public private(set) var listItems: [UIListItem] = []
     
-    public init() {}
+    /// Creates a `UIOrderedList` with text in the list items.
+    ///
+    /// - Parameter text: The strings for the `UIListItems`.
+    public init(with text: String...) {
+        self.listItems = text.map { UIListItem(text: $0) }
+    }
 }
 
 /// A wrapper class for li (list) elements.
