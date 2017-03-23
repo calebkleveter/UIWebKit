@@ -20,7 +20,11 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+/// A wrapper class around an `ol` (odered list) element.
 open class UIOrderedList {
+    
+    /// The `ol` element that is represented by this class.
+    let ol = UIElement(element: .ol)
     init() {}
 }
 
