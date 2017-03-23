@@ -39,4 +39,13 @@ open class UIListItem {
         self.text = text
         if let text = text { li.add(text) }
     }
+    
+    /// Creates a `UIListItem` with children and no text.
+    ///
+    /// - Parameter children: The elements that are to be the children of the `li` element.
+    init(with children: UIElement...) {
+        self.text = nil
+        self.children = children
+        for child in children { li.add(child) }
+    }
 }
