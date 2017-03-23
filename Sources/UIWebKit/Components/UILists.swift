@@ -35,18 +35,18 @@ open class UIOrderedList {
 open class UIListItem {
     
     /// The base list element of the class
-    let li = UIElement(element: .li)
+    public let li = UIElement(element: .li)
     
     /// The child elements of the li.
-    var children: [UIElement] = []
+    public var children: [UIElement] = []
     
     /// The text for the list element.
-    let text: String?
+    public let text: String?
     
     /// Creates a `UIListItem` with the text passed in.
     ///
     /// - Parameter text: The text for instances `li` property.
-    init(text: String? = nil) {
+    public init(text: String? = nil) {
         self.text = text
         if let text = text { li.add(text) }
     }
@@ -54,7 +54,7 @@ open class UIListItem {
     /// Creates a `UIListItem` with children and no text.
     ///
     /// - Parameter children: The elements that are to be the children of the `li` element.
-    init(with children: UIElement...) {
+    public init(with children: UIElement...) {
         self.text = nil
         self.children = children
         for child in children { li.add(child) }
