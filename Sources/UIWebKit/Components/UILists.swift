@@ -21,6 +21,7 @@
 //  SOFTWARE.
 
 open class UIListItem {
+    let li = UIElement(element: .li)
     let text: String
     
     init(text: String) {
