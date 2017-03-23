@@ -27,7 +27,7 @@ open class UIOrderedList {
     public let ol = UIElement(element: .ol)
     
     /// The list items used in the ordered list.
-    public private(set) var listItems: [UIElement] = []
+    public private(set) var listItems: [UIListItem] = []
     
     public init() {}
 }
