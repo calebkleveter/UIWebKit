@@ -32,7 +32,7 @@ open class UIAnchor {
     /// The link the anchor opens when selected.
     public var link: String
     
-    /// Creates a basic `UIAnchor` object with a title.
+    /// Creates a basic `UIAnchor` object with a title and link.
     ///
     /// - Parameters:
     ///   - title: The text that is used for the anchor element.
@@ -40,5 +40,7 @@ open class UIAnchor {
     init(title: String, link: String) {
         self.title = title
         self.link = link
+        anchor.attributes["href"] = link
+        anchor.add(title)
     }
 }
