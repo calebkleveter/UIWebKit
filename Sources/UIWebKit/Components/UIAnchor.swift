@@ -27,10 +27,18 @@ open class UIAnchor {
     public let anchor = UIElement(element: .a)
     
     /// The text in the anchor.
-    public var title: String
+    public var title: String {
+        didSet {
+            self.anchor.add(title)
+        }
+    }
     
     /// The link the anchor opens when selected.
-    public var link: String
+    public var link: String {
+        didSet {
+            self.anchor.attributes["href"] = link
+        }
+    }
     
     /// Creates a basic `UIAnchor` object with a title and link.
     ///
