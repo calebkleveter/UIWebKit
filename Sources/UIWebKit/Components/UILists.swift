@@ -32,15 +32,15 @@ open class UIOrderedList {
     /// Creates a `UIOrderedList` with text in the list items.
     ///
     /// - Parameter text: The strings for the `UIListItems`.
-    public init(with text: String...) {
+    public init(text: String...) {
         self.listItems = text.map { UIListItem(text: $0) }
     }
     
     /// Creates a `UIOrderedList` with children in the list items.
     ///
     /// - Parameter elements: The elements that will be used in the `li` elements.
-    public init(with elements: UIElement...) {
-        self.listItems = elements.map { UIListItem(with: $0) }
+    public init(elements: UIElement...) {
+        self.listItems = elements.map { UIListItem(children: $0) }
     }
     
     /// Creates a `UIOrderedList` with custom `UIListItems`.
@@ -82,7 +82,7 @@ open class UIListItem {
     /// Creates a `UIListItem` with children and no text.
     ///
     /// - Parameter children: The elements that are to be the children of the `li` element.
-    public init(with children: UIElement...) {
+    public init(children: UIElement...) {
         self.text = nil
         self.children = children
         for child in children { li.add(child) }
