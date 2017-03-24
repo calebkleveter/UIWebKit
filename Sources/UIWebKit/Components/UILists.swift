@@ -25,6 +25,9 @@ open class UIUnorderedList {
     
     /// The base `ul` element of the `UIUnorderedList` object.
     public let ul = UIElement(element: .ul)
+    
+    /// The list items used in the unordered list.
+    public private(set) var listItems: [UIListItem] = []
 }
 
 /// A wrapper class around an `ol` (odered list) element.
