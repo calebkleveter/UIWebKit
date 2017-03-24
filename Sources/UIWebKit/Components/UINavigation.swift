@@ -23,6 +23,9 @@
 /// A wrapper object around a navigation element with a unordered list of anchors.
 open class UINavigation {
     
+    /// The top level nav of the `UINavigation` object.
+    public let nav = UIElement(element: .nav)
+    
     /// The link and text the navigations anchor elements are created from.
     var anchorAttributes: [String: String]
     
