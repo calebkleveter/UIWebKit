@@ -29,11 +29,16 @@ open class UIAnchor {
     /// The text in the anchor.
     public var title: String
     
+    /// The link the anchor opens when selected.
+    public var link: String
+    
     /// Creates a basic `UIAnchor` object with a title.
     ///
     /// - Parameters:
     ///   - title: The text that is used for the anchor element.
-    init(title: String) {
+    ///   - link: The link the anchor will open when it is selected.
+    init(title: String, link: String) {
         self.title = title
+        self.link = link
     }
 }
