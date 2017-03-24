@@ -28,6 +28,14 @@ open class UIUnorderedList {
     
     /// The list items used in the unordered list.
     public private(set) var listItems: [UIListItem] = []
+    
+    /// Creates a `UIUnorderedList` object with text in the list items.
+    ///
+    /// - Parameter text: The strings for the `UIListItems`.
+    public init(text: String...) {
+        self.listItems = text.map { UIListItem(text: $0) }
+        _ = listItems.map { ul.add($0) }
+    }
 }
 
 /// A wrapper class around an `ol` (odered list) element.
