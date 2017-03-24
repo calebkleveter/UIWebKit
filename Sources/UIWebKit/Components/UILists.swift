@@ -42,7 +42,7 @@ open class UIUnorderedList {
     /// Creates a `UIUnorderedList` object with children in the list items.
     ///
     /// - Parameter elements: The elements that will be used in the `li` elements.
-    public init(elements: UIElement...) {
+    public init(elements: ElementRenderable...) {
         self.listItems = elements.map { UIListItem(children: $0) }
         _ = listItems.map { ul.add($0) }
     }
@@ -86,7 +86,7 @@ open class UIOrderedList {
     /// Creates a `UIOrderedList` with children in the list items.
     ///
     /// - Parameter elements: The elements that will be used in the `li` elements.
-    public init(elements: UIElement...) {
+    public init(elements: ElementRenderable...) {
         self.listItems = elements.map { UIListItem(children: $0) }
         _ = listItems.map { ol.add($0) }
     }
@@ -117,7 +117,7 @@ open class UIListItem {
     public let li = UIElement(element: .li)
     
     /// The child elements of the li.
-    public var children: [UIElement] = []
+    public var children: [ElementRenderable] = []
     
     /// The text for the list element.
     public let text: String?
@@ -133,7 +133,7 @@ open class UIListItem {
     /// Creates a `UIListItem` with children and no text.
     ///
     /// - Parameter children: The elements that are to be the children of the `li` element.
-    public init(children: UIElement...) {
+    public init(children: ElementRenderable...) {
         self.text = nil
         self.children = children
         for child in children { li.add(child) }
