@@ -20,6 +20,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+// MARK: - UIUnorderedList
+
 /// A wrapper class that represents an HTML `ul` element.
 open class UIUnorderedList {
     
@@ -62,6 +64,8 @@ extension UIUnorderedList: ElementRenderable {
     }
 }
 
+// MARK: - UIOrderedList
+
 /// A wrapper class around an `ol` (odered list) element.
 open class UIOrderedList {
     
@@ -103,6 +107,8 @@ extension UIOrderedList: ElementRenderable {
         return self.ol
     }
 }
+
+// MARK: - UIListItem
 
 /// A wrapper class for li (list) elements.
 open class UIListItem {
