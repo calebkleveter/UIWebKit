@@ -40,5 +40,6 @@ open class UINavigation {
         self.anchors = anchorAttributes.map({ (title, link) -> UIAnchor in
             UIAnchor(title: title, link: link)
         })
+        self.nav.add(UIUnorderedList(elements: self.anchors))
     }
 }
