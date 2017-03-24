@@ -20,6 +20,9 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+/// A wrapper class that represents an HTML `ul` element.
+open class UIUnorderedList {}
+
 /// A wrapper class around an `ol` (odered list) element.
 open class UIOrderedList {
     
