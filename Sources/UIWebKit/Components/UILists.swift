@@ -21,7 +21,11 @@
 //  SOFTWARE.
 
 /// A wrapper class that represents an HTML `ul` element.
-open class UIUnorderedList {}
+open class UIUnorderedList {
+    
+    /// The base `ul` element of the `UIUnorderedList` object.
+    public let ul = UIElement(element: .ul)
+}
 
 /// A wrapper class around an `ol` (odered list) element.
 open class UIOrderedList {
