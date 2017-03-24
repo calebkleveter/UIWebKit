@@ -24,5 +24,5 @@
 open class UIAnchor {
     
     /// The anchor element `UIAnchor` represents.
-    let anchor = UIElement(element: .a)
+    public let anchor = UIElement(element: .a)
 }
