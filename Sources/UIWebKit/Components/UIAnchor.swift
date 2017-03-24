@@ -21,4 +21,8 @@
 //  SOFTWARE.
 
 /// A wrapper around an HTML `a` (anchor) element. This is what is used for links.
-open class UIAnchor {}
+open class UIAnchor {
+    
+    /// The anchor element `UIAnchor` represents.
+    let anchor = UIElement(element: .a)
+}
