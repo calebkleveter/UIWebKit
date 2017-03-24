@@ -54,6 +54,14 @@ open class UIUnorderedList {
     }
 }
 
+extension UIUnorderedList: ElementRenderable {
+    
+    /// The top level `ul` element.
+    public var topLevelElement: UIElement {
+        return self.ul
+    }
+}
+
 /// A wrapper class around an `ol` (odered list) element.
 open class UIOrderedList {
     
