@@ -34,7 +34,7 @@ open class UIUnorderedList {
     /// Creates a `UIUnorderedList` object with text in the list items.
     ///
     /// - Parameter text: The strings for the `UIListItems`.
-    public init(text: String...) {
+    public init(text: [String]) {
         self.listItems = text.map { UIListItem(text: $0) }
         _ = listItems.map { ul.add($0) }
     }
@@ -42,15 +42,15 @@ open class UIUnorderedList {
     /// Creates a `UIUnorderedList` object with children in the list items.
     ///
     /// - Parameter elements: The elements that will be used in the `li` elements.
-    public init(elements: ElementRenderable...) {
-        self.listItems = elements.map { UIListItem(children: $0) }
+    public init(elements: [ElementRenderable]) {
+        self.listItems = elements.map { UIListItem(children: [$0]) }
         _ = listItems.map { ul.add($0) }
     }
     
     /// Creates a `UIUnorderedList` object with custom `UIListItems`.
     ///
     /// - Parameter listElements: The `UIListItems` for the `UIUnorderedList` ul.
-    public init(with listElements: UIListItem...) {
+    public init(with listElements: [UIListItem]) {
         self.listItems = listElements
         _ = listItems.map { ul.add($0) }
     }
@@ -78,7 +78,7 @@ open class UIOrderedList {
     /// Creates a `UIOrderedList` with text in the list items.
     ///
     /// - Parameter text: The strings for the `UIListItems`.
-    public init(text: String...) {
+    public init(text: [String]) {
         self.listItems = text.map { UIListItem(text: $0) }
         _ = listItems.map { ol.add($0) }
     }
@@ -86,15 +86,15 @@ open class UIOrderedList {
     /// Creates a `UIOrderedList` with children in the list items.
     ///
     /// - Parameter elements: The elements that will be used in the `li` elements.
-    public init(elements: ElementRenderable...) {
-        self.listItems = elements.map { UIListItem(children: $0) }
+    public init(elements: [ElementRenderable]) {
+        self.listItems = elements.map { UIListItem(children: [$0]) }
         _ = listItems.map { ol.add($0) }
     }
     
     /// Creates a `UIOrderedList` with custom `UIListItems`.
     ///
     /// - Parameter listElements: The `UIListItems` for the `UIOrderedList` ol.
-    public init(with listElements: UIListItem...) {
+    public init(with listElements: [UIListItem]) {
         self.listItems = listElements
         _ = listItems.map { ol.add($0) }
     }
@@ -133,7 +133,7 @@ open class UIListItem {
     /// Creates a `UIListItem` with children and no text.
     ///
     /// - Parameter children: The elements that are to be the children of the `li` element.
-    public init(children: ElementRenderable...) {
+    public init(children: [ElementRenderable]) {
         self.text = nil
         self.children = children
         for child in children { li.add(child) }
