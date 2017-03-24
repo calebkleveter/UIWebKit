@@ -52,3 +52,11 @@ open class UIAnchor {
         anchor.add(title)
     }
 }
+
+extension UIAnchor: ElementRenderable {
+    
+    /// The top level anchor element of the `UIAnchor` object.
+    public var topLevelElement: UIElement {
+        return self.anchor
+    }
+}
