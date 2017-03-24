@@ -26,7 +26,14 @@ open class UIAnchor {
     /// The anchor element `UIAnchor` represents.
     public let anchor = UIElement(element: .a)
     
+    /// The text in the anchor.
+    public var title: String
     
-    /// Creates a basic `UIAnchor` object.
-    init() {}
+    /// Creates a basic `UIAnchor` object with a title.
+    ///
+    /// - Parameters:
+    ///   - title: The text that is used for the anchor element.
+    init(title: String) {
+        self.title = title
+    }
 }
