@@ -36,6 +36,14 @@ open class UIUnorderedList {
         self.listItems = text.map { UIListItem(text: $0) }
         _ = listItems.map { ul.add($0) }
     }
+    
+    /// Creates a `UIUnorderedList` object with children in the list items.
+    ///
+    /// - Parameter elements: The elements that will be used in the `li` elements.
+    public init(elements: UIElement...) {
+        self.listItems = elements.map { UIListItem(children: $0) }
+        _ = listItems.map { ul.add($0) }
+    }
 }
 
 /// A wrapper class around an `ol` (odered list) element.
