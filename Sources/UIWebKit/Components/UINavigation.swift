@@ -43,3 +43,11 @@ open class UINavigation {
         self.nav.add(UIUnorderedList(elements: self.anchors))
     }
 }
+
+extension UINavigation: ElementRenderable {
+    
+    /// The top level `nav` element of the `UINavigation` object.
+    public var topLevelElement: UIElement {
+        return self.nav
+    }
+}
