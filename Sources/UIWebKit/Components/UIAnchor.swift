@@ -45,7 +45,7 @@ open class UIAnchor {
     /// - Parameters:
     ///   - title: The text that is used for the anchor element.
     ///   - link: The link the anchor will open when it is selected.
-    init(title: String, link: String) {
+    public init(title: String, link: String) {
         self.title = title
         self.link = link
         anchor.attributes["href"] = link
