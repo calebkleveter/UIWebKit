@@ -35,7 +35,7 @@ open class UINavigation {
     /// Creates a `UINavigation` with the attributs for the anchor elements.
     ///
     /// - Parameter navItems: The dictionary used for getting the information for the anchors. The key is used for the text and the value is used as the link.
-    init(navItems: [String: String]) {
+    public init(navItems: [String: String]) {
         self.anchorAttributes = navItems
         self.anchors = anchorAttributes.map({ (title, link) -> UIAnchor in
             UIAnchor(title: title, link: link)
