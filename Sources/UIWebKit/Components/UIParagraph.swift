@@ -26,6 +26,18 @@ open class UIParagraph {
     /// The `p` element that is represented by the object.
     public let p = UIElement(element: .p)
     
-    /// Creates a `UIParagraph`.
-    public init() {}
+    /// The text held in the `p` element.
+    public var text: String {
+        didSet {
+            self.p.add(self.text)
+        }
+    }
+    
+    /// Creates a `UIParagraph` with the desired text.
+    ///
+    /// - Parameter text: The text used in the objects `p` element.
+    public init(text: String) {
+        self.text = text
+        self.p.add(text)
+    }
 }
