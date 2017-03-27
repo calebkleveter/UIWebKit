@@ -21,4 +21,8 @@
 //  SOFTWARE.
 
 /// `UIParagraph` is a wrapper class around a `p` HTML tag which is represented by a `UIElement`.
-open class UIParagraph {}
+open class UIParagraph {
+    
+    /// The `p` element that is represented by the object.
+    let p = UIElement(element: .p)
+}
