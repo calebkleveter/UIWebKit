@@ -26,4 +26,6 @@ open class UIParagraph {
     /// The `p` element that is represented by the object.
     public let p = UIElement(element: .p)
     
+    /// Creates a `UIParagraph`.
+    public init() {}
 }
