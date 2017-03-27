@@ -50,7 +50,7 @@ open class UITable {
     /// - Parameters:
     ///   - headerTitles: The titles that will be in the header row's cells.
     ///   - rowsCellData: A 2D array of strings that contains the data for the data cells. Each sub-array is for a row of cells.
-    init(with headerTitles: [String], and rowsCellData: [[String]]) {
+    public init(with headerTitles: [String], and rowsCellData: [[String]]) {
         self.table = UIElement(element: .table)
         self.rows = []
         
