@@ -24,5 +24,6 @@
 open class UIParagraph {
     
     /// The `p` element that is represented by the object.
-    let p = UIElement(element: .p)
+    public let p = UIElement(element: .p)
+    
 }
