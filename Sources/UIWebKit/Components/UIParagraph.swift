@@ -19,3 +19,6 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
+
+/// `UIParagraph` is a wrapper class around a `p` HTML tag which is represented by a `UIElement`.
+open class UIParagraph {}
