@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>LoginFormType Enum Reference</title>
+    <title>UIParagraph Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/LoginFormType" class="dashAnchor"></a>
-    <a title="LoginFormType Enum Reference"></a>
+    <a name="//apple_ref/swift/Class/UIParagraph" class="dashAnchor"></a>
+    <a title="UIParagraph Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (100% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        LoginFormType Enum Reference
+        UIParagraph Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -107,14 +107,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>LoginFormType</h1>
+            <h1>UIParagraph</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LoginFormType</span></code></pre>
+                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">UIParagraph</span></code></pre>
 
                 </div>
               </div>
-            <p>Designates the login that is used for creating the login form.</p>
+            <p><code>UIParagraph</code> is a wrapper class around a <code>p</code> HTML tag which is represented by a <code><a href="../Classes/UIElement.html">UIElement</a></code>.</p>
 
           </section>
           <section class="section task-group-section">
@@ -123,9 +123,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FO8UIWebKit13LoginFormType5emailFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/email" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO8UIWebKit13LoginFormType5emailFMS0_S0_">email</a>
+                    <a name="/s:vC8UIWebKit11UIParagraph1pCS_9UIElement"></a>
+                    <a name="//apple_ref/swift/Property/p" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8UIWebKit11UIParagraph1pCS_9UIElement">p</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -133,30 +133,26 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Sets the form as taking an email for the users login.</p>
+                        <p>The <code>p</code> element that is represented by the object.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">email</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">p</span> <span class="o">=</span> <span class="kt"><a href="../Classes/UIElement.html">UIElement</a></span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="o">.</span><span class="n">p</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FO8UIWebKit13LoginFormType8usernameFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/username" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO8UIWebKit13LoginFormType8usernameFMS0_S0_">username</a>
+                    <a name="/s:vC8UIWebKit11UIParagraph4textSS"></a>
+                    <a name="//apple_ref/swift/Property/text" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8UIWebKit11UIParagraph4textSS">text</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -164,16 +160,63 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Sets the form as taking a username for the login</p>
+                        <p>The text held in the <code><a href="../Classes/UIParagraph.html#/s:vC8UIWebKit11UIParagraph1pCS_9UIElement">p</a></code> element.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">username</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8UIWebKit11UIParagraphcFT4textSS_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(text:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8UIWebKit11UIParagraphcFT4textSS_S0_">init(text:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a <code>UIParagraph</code> with the desired text.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>text</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The text used in the objects <code>p</code> element.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

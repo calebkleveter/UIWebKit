@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>UITableRow Class Reference</title>
+    <title>UIAnchor Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/UITableRow" class="dashAnchor"></a>
-    <a title="UITableRow Class Reference"></a>
+    <a name="//apple_ref/swift/Class/UIAnchor" class="dashAnchor"></a>
+    <a title="UIAnchor Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (100% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        UITableRow Class Reference
+        UIAnchor Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -107,14 +107,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>UITableRow</h1>
+            <h1>UIAnchor</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">UITableRow</span></code></pre>
+                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">UIAnchor</span></code></pre>
 
                 </div>
               </div>
-            <p>A row in an HTML table.</p>
+            <p>A wrapper around an HTML <code>a</code> (anchor) element. This is what is used for links.</p>
 
           </section>
           <section class="section task-group-section">
@@ -123,9 +123,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8UIWebKit10UITableRow3rowCS_9UIElement"></a>
-                    <a name="//apple_ref/swift/Property/row" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8UIWebKit10UITableRow3rowCS_9UIElement">row</a>
+                    <a name="/s:vC8UIWebKit8UIAnchor6anchorCS_9UIElement"></a>
+                    <a name="//apple_ref/swift/Property/anchor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8UIWebKit8UIAnchor6anchorCS_9UIElement">anchor</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -133,14 +133,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The row that contains the table cells.</p>
+                        <p>The anchor element <code>UIAnchor</code> represents.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">row</span><span class="p">:</span> <span class="kt"><a href="../Classes/UIElement.html">UIElement</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">anchor</span> <span class="o">=</span> <span class="kt"><a href="../Classes/UIElement.html">UIElement</a></span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="o">.</span><span class="n">a</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -150,9 +150,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8UIWebKit10UITableRow5cellsGSaCS_11UITableCell_"></a>
-                    <a name="//apple_ref/swift/Property/cells" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8UIWebKit10UITableRow5cellsGSaCS_11UITableCell_">cells</a>
+                    <a name="/s:vC8UIWebKit8UIAnchor5titleSS"></a>
+                    <a name="//apple_ref/swift/Property/title" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8UIWebKit8UIAnchor5titleSS">title</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -160,14 +160,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The cells that contain the data for the table.</p>
+                        <p>The text in the anchor.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">cells</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/UITableCell.html">UITableCell</a></span><span class="p">]</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -177,9 +177,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC8UIWebKit10UITableRowcFT4withGSaSS__S0_"></a>
-                    <a name="//apple_ref/swift/Method/init(with:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC8UIWebKit10UITableRowcFT4withGSaSS__S0_">init(with:)</a>
+                    <a name="/s:vC8UIWebKit8UIAnchor4linkSS"></a>
+                    <a name="//apple_ref/swift/Property/link" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8UIWebKit8UIAnchor4linkSS">link</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -187,14 +187,41 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Creates a row for an HTML table with cells containing data.`</p>
+                        <p>The link the anchor opens when selected.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">with</span> <span class="nv">data</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">])</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">link</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8UIWebKit8UIAnchorcFT5titleSS4linkSS_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(title:link:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8UIWebKit8UIAnchorcFT5titleSS4linkSS_S0_">init(title:link:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a basic <code>UIAnchor</code> object with a title and link.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">link</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -205,12 +232,25 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>data</em>
+                                <em>title</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The data that will conatined in the cells in the table row.</p>
+                                  <p>The text that is used for the anchor element.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>link</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The link the anchor will open when it is selected.</p>
 
                                 </div>
                               </td>
@@ -228,9 +268,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8UIWebKit10UITableRow15topLevelElementCS_9UIElement"></a>
+                    <a name="/s:vC8UIWebKit8UIAnchor15topLevelElementCS_9UIElement"></a>
                     <a name="//apple_ref/swift/Property/topLevelElement" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8UIWebKit10UITableRow15topLevelElementCS_9UIElement">topLevelElement</a>
+                    <a class="token" href="#/s:vC8UIWebKit8UIAnchor15topLevelElementCS_9UIElement">topLevelElement</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -238,7 +278,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The row contained in the current <code>UITableRow</code>.</p>
+                        <p>The top level anchor element of the <code>UIAnchor</code> object.</p>
 
                       </div>
                       <div class="declaration">
