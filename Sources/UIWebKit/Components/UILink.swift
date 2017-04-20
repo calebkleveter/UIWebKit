@@ -34,6 +34,14 @@ open class CSSLink {
     }
 }
 
+extension CSSLink: ElementRenderable {
+    
+    /// The `link` element contained in the `CSSLink`'s `UILink`.
+    public var topLevelElement: UIElement {
+        return link.link
+    }
+}
+
 /// A wrapper class for a `UIElement` that represents a `link` element.
 open class UILink {
     
