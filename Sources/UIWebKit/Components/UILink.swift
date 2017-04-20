@@ -24,10 +24,10 @@
 open class UILink {
     
     /// The `link` element that the class represents.
-    public let link = UIElement(element: .link)
+    public let link: UIElement = UIElement(element: .link)
     
     /// The `rel` attribute for the `link` tag.
-    public var rel = "" {
+    public var rel: String = "" {
         didSet {
             link.attributes["rel"] = rel
         }
