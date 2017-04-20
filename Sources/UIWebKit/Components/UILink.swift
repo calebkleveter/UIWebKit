@@ -50,3 +50,11 @@ open class UILink {
         self.rel = rel
     }
 }
+
+extension UILink: ElementRenderable {
+    
+    /// The `link` tag represented by a `UIElement` object that is controlled by an instance `UILink`.
+    public var topLevelElement: UIElement {
+        return link
+    }
+}
