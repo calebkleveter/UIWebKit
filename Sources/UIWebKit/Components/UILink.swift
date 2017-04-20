@@ -39,4 +39,14 @@ open class UILink {
             link.attributes["href"] = href
         }
     }
+    
+    /// Creates a instance of `UILink` with an `href` and `rel` properties.
+    ///
+    /// - Parameters:
+    ///   - href: The path the the document being linked to.
+    ///   - rel: The relationship between the linked document to the current document. View the HTML [documention](http://devdocs.io/html/element/link) for more details.
+    init(href: String, rel: String) {
+        self.href = href
+        self.rel = rel
+    }
 }
