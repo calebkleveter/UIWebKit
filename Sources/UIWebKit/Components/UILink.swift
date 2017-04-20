@@ -32,4 +32,11 @@ open class UILink {
             link.attributes["rel"] = rel
         }
     }
+    
+    /// The `href` attribute for the `link` tag.
+    public var href: String = "" {
+        didSet {
+            link.attributes["href"] = href
+        }
+    }
 }
