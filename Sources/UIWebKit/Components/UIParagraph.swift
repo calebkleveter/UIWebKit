@@ -41,3 +41,11 @@ open class UIParagraph {
         self.p.add(text)
     }
 }
+
+extension UIParagraph: ElementRenderable {
+    
+    /// The top level `p` element of the `UIParagraph`.
+    public var topLevelElement: UIElement {
+        return p
+    }
+}
