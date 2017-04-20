@@ -21,7 +21,18 @@
 //  SOFTWARE.
 
 /// `CSSLink` represents a link to a CSS file from the HTML file that is rendered.
-open class CSSLink {}
+open class CSSLink {
+    
+    /// The `UILink` used to link to the CSS file.
+    public let link: UILink
+    
+    /// Creates a link to a CSS file from the rendered HTML file.
+    ///
+    /// - Parameter href: The path to the CSS file. This parameter defaults `"css/main.css"`
+    public init(href: String = "css/main.css") {
+        self.link = UILink(href: href, rel: "stylesheet")
+    }
+}
 
 /// A wrapper class for a `UIElement` that represents a `link` element.
 open class UILink {
