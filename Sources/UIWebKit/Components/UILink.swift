@@ -20,6 +20,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+
+
 /// A wrapper class for a `UIElement` that represents a `link` element.
 open class UILink {
     
@@ -45,7 +47,7 @@ open class UILink {
     /// - Parameters:
     ///   - href: The path the the document being linked to.
     ///   - rel: The relationship between the linked document to the current document. View the HTML [documention](http://devdocs.io/html/element/link) for more details.
-    init(href: String, rel: String) {
+    public init(href: String, rel: String) {
         self.href = href
         self.rel = rel
     }
