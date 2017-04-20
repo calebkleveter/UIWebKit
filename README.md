@@ -53,7 +53,7 @@ drop.get("about") { req in
 ```
 ## Documentation:
 
-You can get the API documentation [here](https://calebkleveter.github.io/UIWebKit-Docs/).
+You can get the API documentation [here](https://calebkleveter.github.io/UIWebKit/).
 
 ## Contributing:
 
