@@ -20,4 +20,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-open class UILink {}
+open class UILink {
+    
+    /// The `link` element that the class represents.
+    public let link = UIElement(element: .link)
+}
