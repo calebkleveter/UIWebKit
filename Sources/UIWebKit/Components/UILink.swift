@@ -20,7 +20,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-
+/// `CSSLink` represents a link to a CSS file from the HTML file that is rendered.
+open class CSSLink {}
 
 /// A wrapper class for a `UIElement` that represents a `link` element.
 open class UILink {
