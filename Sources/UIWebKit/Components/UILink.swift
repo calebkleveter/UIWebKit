@@ -20,6 +20,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+/// A wrapper class for a `UIElement` that represents a `link` element.
 open class UILink {
     
     /// The `link` element that the class represents.
