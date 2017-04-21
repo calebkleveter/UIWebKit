@@ -104,6 +104,8 @@ public class UIElement {
 
     /// Renders Markdown to HTML that gets added as child elements. This method uses `.inject(string)` for adding the elements.
     ///
+    /// - Warning: This method uses an incomplete and broken moduel to render the Markdown. This should be fixed in the future, but for now use Vapor's [markdown package](https://github.com/vapor/markdown).
+    ///
     /// - Parameter string: The Markdown that will be rendered to HTML.
     public func addMarkdown(_ string: String)throws {
         if !element.isSingleTag {
