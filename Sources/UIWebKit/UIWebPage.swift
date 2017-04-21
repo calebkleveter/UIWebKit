@@ -53,6 +53,14 @@ open class UIWebPage {
         self.footer = UIElement(element: .footer)
     }
     
+    /// Creates an instance of `UIWebPage` with the basic required elements.
+    ///
+    /// - Parameter title: The title of the page.
+    convenience public init(title: String) {
+        self.init()
+        self.head.inject("<title>\(title)</title>")
+    }
+    
     /// For custom configuration of the web page before it is rendered. Over-ride this method to do anything before page rendering.
     open func configure() {}
     
