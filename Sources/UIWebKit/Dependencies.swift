@@ -47,6 +47,11 @@ public enum Dependency {
     /// - parameter _: The path to the CSS file.
     case customCSS(String)
     
+    /// For loading custom JS into a web page.
+    ///
+    /// - parameter _: The path to the JS file.
+    case customJavaScript(String)
+    
     /// Returns a a dictionary with the key as the type of CDN links that are used in the value and the value as an array of Strings that are the CDN links to the dependency.
     public var htmlTags: [DependencyType: [String]] {
         switch self {
@@ -54,6 +59,7 @@ public enum Dependency {
         case .jQuery: return [.javaScript: ["<script src=\"https://code.jquery.com/jquery-3.1.1.min.js\" integrity=\"sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=\"crossorigin=\"anonymous\"></script>"]]
         case .uiKit: return [.css: ["<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.12/css/uikit.min.css\" />"], .javaScript: ["<script src=\"https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.12/js/uikit.min.js\"></script>"]]
         case .customCSS(let path): return [.css: ["<link rel=\"stylesheet\" href=\"\(path)\""]]
+        case .customJavaScript(let path): return [.javaScript: ["<script src=\"\(path)\"></script>"]]
         }
     }
 }
