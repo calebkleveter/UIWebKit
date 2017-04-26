@@ -42,6 +42,9 @@ public enum Dependency {
     /// For loading UIKit (the [front-end framework](https://getuikit.com/)) into a `UIWebPage`.
     case uiKit
     
+    /// For loading Normalize.css into a `UIWebPage`.
+    case normalize
+    
     /// For loading custom CSS files into a web page.
     ///
     /// - parameter _: The path to the CSS file.
@@ -60,6 +63,7 @@ public enum Dependency {
         case .uiKit: return [.css: ["<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.12/css/uikit.min.css\" />"], .javaScript: ["<script src=\"https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.12/js/uikit.min.js\"></script>"]]
         case .customCSS(let path): return [.css: ["<link rel=\"stylesheet\" href=\"\(path)\""]]
         case .customJavaScript(let path): return [.javaScript: ["<script src=\"\(path)\"></script>"]]
+        case .normalize: return [.css: ["<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css.map\""]]
         }
     }
 }
