@@ -29,3 +29,5 @@ public func page(title: String, _ handler:(UIElement, UIElement, UIElement, UIEl
     let page = UIWebPage(title: title)
     handler(page.head, page.header, page.section, page.footer)
 }
+
+public extension UIElement {}
