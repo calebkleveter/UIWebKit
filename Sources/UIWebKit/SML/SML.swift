@@ -25,7 +25,7 @@
 /// - Parameters:
 ///   - title: The title of the page. This string is used in the `title` tag.
 ///   - handler: The closure where child elements are added to the base elements of the page. They are the `head`, `header`, `section`, and `footer` in that order.
-func page(title: String, _ handler:(UIElement, UIElement, UIElement, UIElement)->()) {
+public func page(title: String, _ handler:(UIElement, UIElement, UIElement, UIElement)->()) {
     let page = UIWebPage(title: title)
     handler(page.head, page.header, page.section, page.footer)
 }
