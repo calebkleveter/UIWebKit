@@ -35,7 +35,7 @@ public extension UIElement {
     /// Adds an anchor element to the `UIElement`.
     ///
     /// - Parameters:
-    ///   - text: The text that is displayedby the anchor.
+    ///   - text: The text that is displayed by the anchor.
     ///   - href: The URL that the anchor links to.
     ///   - `class`: The classes for the anchor element.
     ///   - id: The ids for the anchor element.
@@ -48,5 +48,23 @@ public extension UIElement {
         self.add(an)
     }
     
+    
+    /// Adds an abbreviation element to the `UIElement`.
+    ///
+    /// - Parameters:
+    ///   - text: The text that is displayed by the abbreviation.
+    ///   - title: Full description of the abbreviation.
+    ///   - `class`: The classes for the abbreviation element.
+    ///   - id: The ids for the abbreviation element.
+    ///   - handler: The closure where child elements are added to the abbreviation element.
+    func abbr(_ text: String, title: String, `class`: String = "", id: String = "", _ handler:(UIElement)->() = {a in}) {
+        let ab = UIElement(element: .abbr)
+        ab.add(text)
+        ab.attributes["title"] = title
+        ab.attributes["class"] = `class`
+        ab.attributes["id"] = id
+        handler(ab)
+        self.add(ab)
+    }
     
 }
