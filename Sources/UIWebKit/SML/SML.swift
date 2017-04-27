@@ -30,4 +30,21 @@ public func page(title: String, _ handler:(UIElement, UIElement, UIElement, UIEl
     handler(page.head, page.header, page.section, page.footer)
 }
 
-public extension UIElement {}
+public extension UIElement {
+    
+    /// Adds an anchor element to the `UIElement`.
+    ///
+    /// - Parameters:
+    ///   - text: The text that is displayedby the anchor.
+    ///   - href: The URL that the anchor links to.
+    ///   - `class`: The classes for the anchor element.
+    ///   - id: The ids for the anchor element.
+    ///   - handler: The closure where child elements are added to the anchor element.
+    func a(_ text: String = "", href: String = "", `class`: String = "", id: String = "", _ handler:(UIElement)->() = {a in}) {
+        let an = UIAnchor(title: text, link: href)
+        an.anchor.attributes["class"] = `class`
+        an.anchor.attributes["id"] = id
+        handler(an.anchor)
+        self.add(an)
+    }
+}
