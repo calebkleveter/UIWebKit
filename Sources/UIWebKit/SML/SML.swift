@@ -82,4 +82,18 @@ public extension UIElement {
         handler(address)
         self.add(address)
     }
+    
+    /// Adds an article element to the `UIElement`.
+    ///
+    /// - Parameters:
+    ///   - `class`: The classes for the `article` element.
+    ///   - id: The ids for the `article` element.
+    ///   - handler: The closure where child elements are added to the `article` element.
+    func article(`class`: String = "", id: String = "", _ handler:(UIElement)->() = {a in}) {
+        let article = UIElement(element: .article)
+        article.attributes["class"] = `class`
+        article.attributes["id"] = id
+        handler(article)
+        self.add(article)
+    }
 }
