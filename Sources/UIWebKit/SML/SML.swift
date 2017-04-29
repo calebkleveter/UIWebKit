@@ -96,4 +96,20 @@ public extension UIElement {
         handler(article)
         self.add(article)
     }
+    
+    /// Adds an `aside` element to the `UIElement`.
+    ///
+    /// - Parameters:
+    ///   - text: The text that is displayed by the `aside` element.
+    ///   - `class`: The classes for the `aside` element.
+    ///   - id: The ids for the `aside` element.
+    ///   - handler: The closure where child elements are added to the `aside` element.
+    func aside(_ text: String, `class`: String = "", id: String = "", _ handler:(UIElement)->() = {a in}) {
+        let aside = UIElement(element: .aside)
+        aside.add(text)
+        aside.attributes["class"] = `class`
+        aside.attributes["id"] = id
+        handler(aside)
+        self.add(aside)
+    }
 }
