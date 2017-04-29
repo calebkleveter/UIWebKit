@@ -65,6 +65,5 @@ public extension UIElement {
         ab.attributes["id"] = id
         handler(ab)
         self.add(ab)
-    }
-    
+    }g
 }
