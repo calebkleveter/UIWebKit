@@ -65,5 +65,21 @@ public extension UIElement {
         ab.attributes["id"] = id
         handler(ab)
         self.add(ab)
-    }g
+    }
+    
+    /// Adds an address element to the `UIElement`.
+    ///
+    /// - Parameters:
+    ///   - text: The text that is displayed by the `address` element.
+    ///   - `class`: The classes for the `address` element.
+    ///   - id: The ids for the `address` element.
+    ///   - handler: The closure where child elements are added to the `address` element.
+    func address(_ text: String, `class`: String = "", id: String = "", _ handler:(UIElement)->() = {a in}) {
+        let address = UIElement(element: .address)
+        address.add(text)
+        address.attributes["class"] = `class`
+        address.attributes["id"] = id
+        handler(address)
+        self.add(address)
+    }
 }
