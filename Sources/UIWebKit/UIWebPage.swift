@@ -68,7 +68,7 @@ open class UIWebPage {
     ///
     /// - Returns: A view that contains the pages HTML in bytes.
     /// - Throws: Any errors that get thrown when creating the view.
-    public func render()throws -> View {
+    public func render() -> View {
         self.configure()
         var html = ""
         html.append("<!DOCTYPE html>")
@@ -93,7 +93,7 @@ open class UIWebPage {
         }
         html.append("</body>")
         
-        return try View(bytes: html.bytes)
+        return View(bytes: html.bytes)
     }
     
     /// Adds dependancies that will be loaded into the webpage.
@@ -110,7 +110,7 @@ extension UIWebPage: ResponseRepresentable {
     ///
     /// - Returns: A response containing the view from rendering.
     /// - Throws: Any errors generated from creating the view.
-    public func makeResponse() throws -> Response {
-        return try render().makeResponse()
+    public func makeResponse()throws -> Response {
+        return render().makeResponse()
     }
 }
