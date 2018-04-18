@@ -1,19 +1,17 @@
+// swift-tools-version:4.0
+
 import PackageDescription
 
 let package = Package(
-    // Name of Package here:
     name: "UIWebKit",
-    dependencies: [
-        .Package(url: "https://github.com/vapor/vapor.git", majorVersion: 2, minor: 0),
-        .Package(url: "https://github.com/calebkleveter/SwiftMark.git", majorVersion: 1, minor: 0)
+    products: [
+        .library(name: "UIWebKit", targets: ["UIWebKit"])
     ],
-    exclude: [
-        "Config",
-        "Database",
-        "Localization",
-        "Public",
-        "Resources",
-        "Tests",
-        ]
+    dependencies: [
+        .package(url: "https://github.com/vapor/vapor.git", from: "3.0.0-rc")
+    ],
+    targets: [
+        .target(name: "UIWebKit", dependencies: ["Vapor"]),
+        .testTarget(name: "UIWebKitTests", dependencies: ["UIWebKit", "Vapor"])
+    ]
 )
-
